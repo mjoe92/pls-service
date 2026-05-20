@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.historie.columns.EfsTreeTableColumn?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.compare.FGSetCompareTabController"
+        fx:id="tabFgSet"
+
+        text="%tab.title.fgset">
+
+    <SplitPane fx:id="fgsetCompareSplitPane" orientation="VERTICAL" BorderPane.alignment="CENTER">
+        <items>
+            <CustomTreeTableView fx:id="fgSetCompareTreeView" tableMenuButtonVisible="true">
+                <columns>
+                    <EfsTreeTableColumn fx:id="setKeyTreeColumn" text="%tablecolumn.setkey"/>
+                    <EfsTreeTableColumn fx:id="description" text="%tablecolumn.description"/>
+                </columns>
+            </CustomTreeTableView>
+        </items>
+    </SplitPane>
+
+</Tab>

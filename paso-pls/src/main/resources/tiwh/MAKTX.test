@@ -1,0 +1,148 @@
+ # test data for unit testing
+2GM880201D        CJEDNOTKA AIRBAGU                        
+2GM880201D        DAIRBAG-EINHEIT                          
+2GM880201D        EAIRBAG UNIT                             
+2GM880201D        IUNIT{ AIRBAG                            
+2GM880201D        LAIRBAG-EINHEIT                          
+2GM880201D        PUNIDADE AIRBAG                          
+2GM880201D        SAIRBAG UNIDAD   
+2GM880201H        CJEDNOTKA AIRBAGU                        
+2GM880201H        DAIRBAG-EINHEIT                          
+2GM880201H        EAIRBAG UNIT                             
+2GM880201H        IUNIT{ AIRBAG                            
+2GM880201H        LAIRBAG-EINHEIT                          
+2GM880201H        PUNIDADE AIRBAG                          
+2GM880201H        SAIRBAG UNIDAD                           
+2GM880201E        CJEDNOTKA AIRBAGU                        
+2GM880201E        DAIRBAG-EINHEIT                          
+2GM880201E        EAIRBAG UNIT                             
+2GM880201E        IUNIT{ AIRBAG                            
+2GM880201E        LAIRBAG-EINHEIT                          
+2GM880201E        PUNIDADE AIRBAG                          
+2GM880201E        SAIRBAG UNIDAD                           
+2GM880201J        CJEDNOTKA AIRBAGU                        
+2GM880201J        DAIRBAG-EINHEIT                          
+2GM880201J        EAIRBAG UNIT                             
+2GM880201J        IUNIT{ AIRBAG                            
+2GM880201J        LAIRBAG-EINHEIT                          
+2GM880201J        PUNIDADE AIRBAG                          
+2GM880201J        SAIRBAG UNIDAD                           
+2GM880201F        CJEDNOTKA AIRBAGU                        
+2GM880201F        DAIRBAG-EINHEIT                          
+2GM880201F        EAIRBAG UNIT                             
+2GM880201F        IUNIT{ AIRBAG                            
+2GM880201F        LAIRBAG-EINHEIT                          
+2GM880201F        PUNIDADE AIRBAG                          
+2GM880201F        SAIRBAG UNIDAD                           
+2GM880201K        CJEDNOTKA AIRBAGU                        
+2GM880201K        DAIRBAG-EINHEIT                          
+2GM880201K        EAIRBAG UNIT                             
+2GM880201K        IUNIT{ AIRBAG                            
+2GM880201K        LAIRBAG-EINHEIT                          
+2GM880201K        PUNIDADE AIRBAG                          
+2GM880201K        SAIRBAG UNIDAD                           
+2GM880201G        CJEDNOTKA AIRBAGU                        
+2GM880201G        DAIRBAG-EINHEIT                          
+2GM880201G        EAIRBAG UNIT                             
+2GM880201G        IUNIT{ AIRBAG                            
+2GM880201G        LAIRBAG-EINHEIT                          
+2GM880201G        PUNIDADE AIRBAG                          
+2GM880201G        SAIRBAG UNIDAD                           
+2GM880201L        CJEDNOTKA AIRBAGU                        
+2GM880201L        DAIRBAG-EINHEIT                          
+2GM880201L        EAIRBAG UNIT                             
+2GM880201L        IUNIT{ AIRBAG                            
+2GM880201L        LAIRBAG-EINHEIT                          
+2GM880201L        PUNIDADE AIRBAG                          
+2GM880201L        SAIRBAG UNIDAD                           
+5G0971584Q        CSEI.VOLANT.AIRBAGU                      
+5G0971584Q        DLTGS.AIRB.LENKRAD                       
+5G0971584Q        EHARNESS,AIRBAG STEERING WHEEL           
+5G0971584Q        IFASCIO CAVI, VOLANTE AIRBAG             
+5G0971584Q        LLTGS.AIRB.LENKRAD                       
+5G0971584Q        PCHIC VOLANT AIRBAG                      
+5G0971584Q        SMAZO,AIRB.VOLANTE                       
+4H0972208D        CZASTRCKA                                
+4H0972208D        DSTECKER                                 
+4H0972208D        EPLUG                                    
+4H0972208D        ISPINA                                   
+4H0972208D        LSTECKER                                 
+4H0972208D        PCONECTOR                                
+4H0972208D        SCONECTOR                                
+N  90764903       CQ-ZASUVKA                               
+N  90764903       DQ-STECKHUELSE                           
+N  90764903       E4-PIN BOX-TYPE CONTACT RECEPTACLE       
+N  90764903       IBUSSOLA DI INNESTO A Q                  
+N  90764903       LQ-STECKHUELSE                           
+N  90764903       PQ-STECKHUELSE                           
+N  90764903       STERMINAL EN Q                           
+N  90764701       CQ-ZASUVKA                               
+N  90764701       DQ-STECKHUELSE                           
+N  90764701       E4-PIN BOX-TYPE CONTACT RECEPTACLE       
+N  90764701       IBUSSOLA DI INNESTO A Q                  
+N  90764701       LQ-STECKHUELSE                           
+N  90764701       PQ-STECKHUELSE                           
+N  90764701       STERMINAL EN Q                           
+5G0971824E        CVEDENI KABELU                           
+5G0971824E        DKABELFUEHRUNG                           
+5G0971824E        ECABLE GUIDE                             
+5G0971824E        IGUIDA CAVO                              
+5G0971824E        LKABELFUEHRUNG                           
+5G0971824E        PGUIA P/ CABO                            
+5G0971824E        SGUIA PARA CABLE                         
+8K0972562         CTELESO                                  
+8K0972562         DGEHAEUSE                                
+8K0972562         EHOUSING                                 
+8K0972562         ISCATOLA                                 
+8K0972562         LGEHAEUSE                                
+8K0972562         PCARCACA                                 
+8K0972562         SCARCASA                                 
+2GM000955         CKONFIGUR. MATERIAL                      
+2GM000955         DKONFIGUR. MATERIAL                      
+2GM000955         ECONFIGURABLE MATERIAL                   
+2GM000955         IKONFIGUR. MATERIAL                      
+2GM000955         LKONFIGUR. MATERIAL                      
+2GM000955         PKONFIGUR. MATERIAL                      
+2GM000955         SMATERIAL CONFIGURABLE                   
+2G0000000         CVUZ                                     
+2G0000000         DWAGEN                                   
+2G0000000         ECAR                                     
+2G0000000         IAUTOMOBILE                              
+2G0000000         LWAGEN                                   
+2G0000000         PCARRO                                   
+2G0000000         SAUTO                                    
+000890151         CCOCKPIT                                 
+000890151         DCOCKPIT                                 
+000890151         EDASHBOARD                               
+000890151         IPLANCIA                                 
+000890151         LCOCKPIT                                 
+000890151         PCOCKPIT                                 
+000890151         SCOCKPIT                                 
+000890151A        CCOCKPIT                                 
+000890151A        DCOCKPIT                                 
+000890151A        EDASHBOARD                               
+000890151A        IPLANCIA                                 
+000890151A        LCOCKPIT                                 
+000890151A        PCOCKPIT                                 
+000890151A        SCOCKPIT                                 
+000890151B        CCOCKPIT                                 
+000890151B        DCOCKPIT                                 
+000890151B        EDASHBOARD                               
+000890151B        IPLANCIA                                 
+000890151B        LCOCKPIT                                 
+000890151B        PCOCKPIT                                 
+000890151B        SCOCKPIT                                                            
+000890151D        CCOCKPIT                                 
+000890151D        DCOCKPIT                                 
+000890151D        EDASHBOARD                               
+000890151D        IPLANCIA                                 
+000890151D        LCOCKPIT                                 
+000890151D        PCOCKPIT                                 
+000890151D        SCOCKPIT                                                     
+000890151F        CCOCKPIT                                 
+000890151F        DCOCKPIT                                 
+000890151F        EDASHBOARD                               
+000890151F        IPLANCIA                                 
+000890151F        LCOCKPIT                                 
+000890151F        PCOCKPIT                                 
+000890151F        SCOCKPIT                                 

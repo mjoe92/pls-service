@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<HBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="completionStatusBar" fx:controller="de.vw.paso.client.control.status.CompletionStatusBarController"
+      minHeight="30" styleClass="completion-status-bar">
+
+    <padding>
+        <Insets left="5.0" right="5.0"/>
+    </padding>
+
+    <Label fx:id="labelSummary" minWidth="50" alignment="BASELINE_LEFT"/>
+    <Label fx:id="labelMessage" alignment="BASELINE_CENTER"/>
+    <Hyperlink fx:id="hyperlinkAction" alignment="BASELINE_RIGHT"/>
+
+</HBox>

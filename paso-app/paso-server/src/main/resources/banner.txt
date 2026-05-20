@@ -1,0 +1,18 @@
+
+PPPPPPPPPPPPPPPPP             AAA                   SSSSSSSSSSSSSSS       OOOOOOOOO
+P::::::::::::::::P           A:::A                SS:::::::::::::::S    OO:::::::::OO
+P::::::PPPPPP:::::P         A:::::A              S:::::SSSSSS::::::S  OO:::::::::::::OO
+PP:::::P     P:::::P       A:::::::A             S:::::S     SSSSSSS O:::::::OOO:::::::O
+  P::::P     P:::::P      A:::::::::A            S:::::S             O::::::O   O::::::O
+  P::::P     P:::::P     A:::::A:::::A           S:::::S             O:::::O     O:::::O
+  P::::PPPPPP:::::P     A:::::A A:::::A           S::::SSSS          O:::::O     O:::::O
+  P:::::::::::::PP     A:::::A   A:::::A           SS::::::SSSSS     O:::::O     O:::::O
+  P::::PPPPPPPPP      A:::::A     A:::::A            SSS::::::::SS   O:::::O     O:::::O
+  P::::P             A:::::AAAAAAAAA:::::A              SSSSSS::::S  O:::::O     O:::::O
+  P::::P            A:::::::::::::::::::::A                  S:::::S O:::::O     O:::::O
+  P::::P           A:::::AAAAAAAAAAAAA:::::A                 S:::::S O::::::O   O::::::O
+PP::::::PP        A:::::A             A:::::A    SSSSSSS     S:::::S O:::::::OOO:::::::O
+P::::::::P       A:::::A               A:::::A   S::::::SSSSSS:::::S  OO:::::::::::::OO
+P::::::::P      A:::::A                 A:::::A  S:::::::::::::::SS     OO:::::::::OO
+PPPPPPPPPP     AAAAAAA                   AAAAAAA  SSSSSSSSSSSSSSS         OOOOOOOOO
+${AnsiColor.GREEN}.:Using spring boot version${AnsiStyle.BOLD}${spring-boot.formatted-version} | Java Version ${java.version} ... gl hf :)

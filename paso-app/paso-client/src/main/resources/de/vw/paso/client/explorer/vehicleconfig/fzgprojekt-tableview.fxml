@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<fx:root
+        type="TableView"
+        xmlns:fx="http://javafx.com/fxml/1"
+        xmlns="http://javafx.com/javafx/8"
+        prefHeight="1024.0"
+        prefWidth="1280.0"
+>
+    <columns>
+        <TableColumn editable="false" text="%tablecolumn.fahrzeug">
+            <columns>
+                <TableColumn fx:id="columnStatus" editable="false" text="%status"/>
+                <TableColumn fx:id="columnPositionInQueue" editable="false" text="%tablecolumn.fahrzeug.position"/>
+                <TableColumn fx:id="columnVehicleProject" editable="false" text="%tablecolumn.fahrzeug.projekt"/>
+                <TableColumn fx:id="columnVehicleMotor" editable="false" text="%tablecolumn.fahrzeug.motor"/>
+                <TableColumn fx:id="columnVehicleGearbox" editable="false" text="%tablecolumn.fahrzeug.gearbox"/>
+                <TableColumn fx:id="columnVehicleConfiguration" editable="false"
+                             text="%tablecolumn.fahrzeug.konfiguration"/>
+                <TableColumn fx:id="columnVehicleValidDate" editable="false"
+                             text="%tablecolumn.fahrzeug.gueltigkeitsdatum"/>
+                <TableColumn fx:id="columnWeight" editable="false" text="%tablecolumn.fahrzeug.gewicht"/>
+            </columns>
+        </TableColumn>
+        <TableColumn editable="false" text="%tablecolumn.datenstand">
+            <columns>
+                <TableColumn fx:id="columnOwnerGroup" editable="false" text="%tablecolumn.datenstand.owner.group"/>
+                <TableColumn fx:id="columnTimestampCreate" editable="false" text="%tablecolumn.datenstand.erstellt"/>
+                <TableColumn fx:id="columnUserCreatedBy" editable="false"
+                             text="%tablecolumn.datenstand.erstellt.user"/>
+                <TableColumn fx:id="columnTimestampChange" editable="false"
+                             text="%tablecolumn.datenstand.geaendert"/>
+                <TableColumn fx:id="columnUserChangedBy" editable="false"
+                             text="%tablecolumn.datenstand.geaendert.user"/>
+            </columns>
+        </TableColumn>
+        <TableColumn editable="false" text="%tablecolumn.modell">
+            <columns>
+                <TableColumn fx:id="columnModelKey" editable="false" text="%tablecolumn.schluessel"/>
+                <TableColumn fx:id="columnModellVertriebsregionKennzeichen" editable="false"
+                             text="%tablecolumn.modell.land"/>
+                <TableColumn fx:id="columnModelYear" editable="false" text="%tablecolumn.modell.jahr"/>
+                <TableColumn fx:id="columnModelDescription" editable="false" text="%tablecolumn.bezeichnung"/>
+                <TableColumn fx:id="columnModelStartDate" editable="false" text="%tablecolumn.modell.einsatz"/>
+                <TableColumn fx:id="columnModelEndDate" editable="false" text="%tablecolumn.modell.entfall"/>
+                <TableColumn fx:id="columnModelStatus" editable="false" text="%status"/>
+            </columns>
+        </TableColumn>
+    </columns>
+</fx:root>

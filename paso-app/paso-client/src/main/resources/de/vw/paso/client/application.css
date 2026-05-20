@@ -1,0 +1,1145 @@
+/**** CSS for the whole application. ****/
+
+/** JavaFX Controls **/
+
+/* Table */
+.tree-table-row-cell:odd {
+    -fx-background-color: rgb(249, 249, 249);
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+.tree-table-view:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:selected,
+.tree-table-view:row-selection:focused > .virtual-flow > .clipped-container > .sheet > .tree-table-row-cell:filled:focused:selected:hover {
+    -fx-background-color: rgba(50, 180, 255, 0.3);
+    -fx-background-insets: 0.0 0.0 1.0 0.0;
+    -fx-text-fill: rgb(0, 0, 0);
+}
+
+/* Toggle Button */
+.toggle-button:selected {
+    -fx-background-color: -fx-shadow-highlight-color,
+    linear-gradient(to bottom, derive(-fx-color, -5%) 70%, derive(-fx-color, -5%) 80%),
+    linear-gradient(to right, rgb(245, 245, 245) 0%, rgb(245, 245, 245) 10%, rgb(245, 245, 245) 90%, rgb(245, 245, 245) 100%);
+    -fx-background-insets: 0 0 -1 0, 0, 1, 1;
+}
+
+/* Tab */
+.tab-header-area .tab-header-background {
+    -fx-background-color: linear-gradient(to bottom, rgb(244, 244, 244) 5%, rgb(250, 250, 250) 70%);
+
+    -fx-border-color: rgb(200, 200, 200);
+    -fx-border-width: 0.0 0.0 1.0 0.0;
+    -fx-border-insets: 0.0;
+}
+
+
+/* Tooltip */
+.tooltip {
+  -fx-show-delay: 200ms;
+  -fx-hide-delay: 200ms;
+  -fx-show-duration: 15000ms;
+}
+
+/** Generic classes **/
+
+.gray .text  {
+    -fx-fill: gray;
+}
+
+.strikethrough .text  {
+    -fx-strikethrough: true;
+}
+
+.monospace {
+    -fx-font-family: monospace;
+}
+
+.font-bold {
+    -fx-font-weight: bold;
+}
+
+.align-center {
+    -fx-alignment: center;
+}
+
+.align-center-right {
+    -fx-alignment: center-right;
+}
+
+/** Custom Controls **/
+
+/* Filterable Table */
+.wrappable-column > .label {
+  -fx-content-display: GRAPHIC_ONLY;
+}
+
+.custom-column-filter .context-menu {
+  -fx-background-color: white;
+}
+
+.custom-column-filter .context-menu:focused {
+  -fx-background-color: white;
+}
+
+.custom-column-filter .custom-menu-item {
+  -fx-background-color: white;
+  -fx-padding: 0;
+}
+
+.custom-column-filter .custom-menu-item:focused {
+  -fx-background-color: white;
+}
+
+.custom-column-filter .label {
+  -fx-text-background-color: BLACK;
+}
+
+.custom-column-filter .label:focused {
+  -fx-text-background-color: BLACK;
+}
+
+/* Ribbon */
+.ribbon-menu-tab-pane {
+  -fx-tab-min-width: 90px;
+  -fx-min-height: 150px;
+}
+
+.ribbon-menu-tab {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-tab:hover {
+  -fx-border-color: rgb(200, 200, 200);
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-tab:selected {
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-border-color: rgb(200, 200, 200);
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-groups-box {
+  -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(244, 244, 244) 100%);
+  -fx-border-color: rgb(103, 103, 103);
+  -fx-border-width: 0.0 0.0 0.0 0.0;
+  -fx-border-insets: 0.0;
+  -fx-padding: 0.4em 0.4em 0.4em 0.4em;
+  -fx-spacing: 0.333em;
+  -fx-alignment: TOP_LEFT;
+}
+
+.ribbon-menu-group-box {
+  -fx-background-color: transparent;
+  -fx-border-color: rgb(221, 221, 221);
+  -fx-border-width: 0.0 1.0 0.0 0.0;
+  -fx-border-insets: 0.0;
+  -fx-padding: 0.0 0.4em 0.0 0.0em;
+  -fx-alignment: TOP_CENTER;
+}
+
+.ribbon-menu-button:focused {
+    -fx-background-color: lightgrey;
+}
+
+.ribbon-menu-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 1);
+}
+
+.ribbon-menu-group-title {
+    -fx-text-fill: #6E6E6E;
+}
+
+.ribbon-button {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: TOP;
+}
+
+.ribbon-button .label {
+    -fx-text-alignment: center;
+}
+
+.ribbon-button-small {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-content-display: LEFT;
+}
+
+.ribbon-menu-choice-button .arrow, .ribbon-menu-choice-button .arrow-button {
+    -fx-alignment: bottom-right;
+}
+
+
+.ribbon-button:hover, .ribbon-button-small:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 1);
+}
+
+.ribbon-button:focused, .ribbon-button-small:focused {
+    -fx-background-color: lightgrey;
+}
+
+.ribbon-button:armed, .ribbon-menu-small:armed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, -1);
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(214, 214, 214) 100%);
+}
+
+.ribbon-menu-button {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-content-display: TOP;
+}
+
+/* Style classes */
+.auto-complete-popup > .list-view {
+    -fx-background-color:
+        linear-gradient(to bottom,
+        derive(-fx-color,-17%),
+        derive(-fx-color,-30%)
+        ),
+        -fx-control-inner-background;
+    -fx-background-insets: -1 -2 -1 -1, 0 -1 0 0;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+
+.auto-complete-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell {
+    -fx-padding: 4 0 4 5;
+    /* No alternate highlighting */
+    -fx-background: -fx-control-inner-background;
+}
+
+.auto-complete-popup > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected {
+    -fx-background:  -fx-selection-bar-non-focused;
+    -fx-background-color:  -fx-background;
+}
+
+.auto-complete-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:hover,
+.auto-complete-popup  > .list-view > .virtual-flow > .clipped-container > .sheet > .list-cell:filled:selected:hover {
+    -fx-background: -fx-accent;
+    -fx-background-color: -fx-selection-bar;
+}
+
+.auto-complete-popup > .list-view > .placeholder > .label {
+    -fx-text-fill: derive(-fx-control-inner-background,-30%);
+}
+
+.custom-text-area {
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+}
+
+.custom-text-area:no-side-nodes {
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
+}
+
+.custom-text-area:left-node-visible {
+    -fx-padding: 0.333333em 0.583em 0.333333em 0;
+}
+
+.custom-text-area:right-node-visible {
+    -fx-padding: 0.333333em 0 0.333333em 0.583em;
+}
+
+.custom-text-area:left-node-visible:right-node-visible {
+    -fx-padding: 0.333333em 0 0.333333em 0;
+}
+
+.custom-text-area:left-node-visible .left-pane {
+    -fx-padding: 0 3 0 3;
+}
+
+.custom-text-area:right-node-visible .right-pane {
+    -fx-padding: 0 3 0 3;
+}
+
+.custom-text-area:focused,
+.custom-text-area:text-area-has-focus {
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-color:
+        -fx-focus-color,
+        -fx-control-inner-background,
+        -fx-faint-focus-color,
+        linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0;
+    -fx-prompt-text-fill: transparent;
+}
+
+
+.text-area-error-state {
+    -fx-border-color: rgba(255,069,0);
+    -fx-border-width: 1;
+    -fx-border-radius: 3,3,3,3;
+    -fx-effect: dropshadow( three-pass-box, rgba(255,0,0, 0.9), 5, 0.3 , 0 , 0 );
+}
+
+.custom-text-field {
+    -fx-text-fill: -fx-text-inner-color;
+    -fx-highlight-fill: derive(-fx-control-inner-background,-20%);
+    -fx-highlight-text-fill: -fx-text-inner-color;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+}
+
+.custom-text-field:no-side-nodes {
+    -fx-padding: 0.333333em 0.583em 0.333333em 0.583em;
+}
+
+.custom-text-field:left-node-visible {
+    -fx-padding: 0.333333em 0.583em 0.333333em 0;
+}
+
+.custom-text-field:right-node-visible {
+    -fx-padding: 0.333333em 0 0.333333em 0.583em;
+}
+
+.custom-text-field:left-node-visible:right-node-visible {
+    -fx-padding: 0.333333em 0 0.333333em 0;
+}
+
+.custom-text-field:left-node-visible .left-pane {
+    -fx-padding: 0 3 0 3;
+}
+
+.custom-text-field:right-node-visible .right-pane {
+    -fx-padding: 0 3 0 3;
+}
+
+.custom-text-field:focused,
+.custom-text-field:text-field-has-focus {
+    -fx-highlight-fill: -fx-accent;
+    -fx-highlight-text-fill: white;
+    -fx-background-color:
+        -fx-focus-color,
+        -fx-control-inner-background,
+        -fx-faint-focus-color,
+        linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 3, 2, 4, 0;
+    -fx-prompt-text-fill: transparent;
+}
+
+.text-field-error-state {
+    -fx-border-color: rgba(255,069,0);
+    -fx-border-width: 1;
+    -fx-border-radius: 3,3,3,3;
+    -fx-effect: dropshadow( three-pass-box, rgba(255,0,0, 0.9), 5, 0.3 , 0 , 0 );
+}
+
+.clearable-field .clear-button {
+    -fx-padding: 0 3 0 0;
+}
+
+.clearable-field .clear-button > .graphic {
+    -fx-background-color: #949494;
+    -fx-scale-shape: false;
+    -fx-padding: 4.5 4.5 4.5 4.5; /* Graphic is 9x9 px */
+    -fx-shape: "M395.992,296.758l1.794-1.794l7.292,7.292l-1.795,1.794 L395.992,296.758z M403.256,294.992l1.794,1.794l-7.292,7.292l-1.794-1.795 L403.256,294.992z";
+}
+
+.clearable-field .clear-button:hover > .graphic {
+    -fx-background-color: #ee4444;
+}
+
+.clearable-field .clear-button:pressed > .graphic {
+    -fx-background-color: #ff1111;
+}
+
+.popup-field .popup-button {
+    -fx-padding: 0 3 0 0;
+}
+
+.popup-field .popup-button > .graphic {
+    -fx-background-color: #949494;
+    -fx-scale-shape: false;
+    -fx-padding: 4.5 4.5 4.5 4.5;
+    -fx-shape: "M 0 0 h 10 l -5 5 z";
+}
+
+.popup-field .popup-button:hover > .graphic {
+    -fx-background-color: #424242;
+}
+
+.popup-field .popup-button:pressed > .graphic {
+    -fx-background-color: #000000;
+}
+
+.fzg-config-tree-cell-no-product {
+    -fx-text-fill: lightgray;
+}
+
+.inspector-tree-row:filled:even,
+.inspector-tree-row:filled:odd {
+    -fx-background-color: lightgray;
+}
+
+.pane-status-bar {
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 1 0 0 0;
+}
+
+.bread-crumb-bar {
+    -fx-background-color: linear-gradient(to bottom, rgb(244, 244, 244) 5%, rgb(250, 250, 250) 70%)
+}
+
+.crumb {
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(214, 214, 214) 100%);
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 1 1 1 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, -1);
+    -fx-padding: 4 13 4 13;
+    -fx-text-fill: black;
+}
+
+.crumb:hover {
+    -fx-border-color: rgb(120, 120, 120);
+}
+
+.crumb:armed {
+    -fx-border-color: rgb(120, 120, 120);
+    -fx-background-color: rgb(224, 224, 224);
+}
+
+.message-list-view .list-cell {
+    -fx-text-background-color: rgb(0, 0, 0);
+    -fx-background-color: rgb(255, 255, 255);
+}
+
+.message-list-view .list-cell:selected {
+    -fx-text-background-color: rgb(255, 255, 255);
+    -fx-background-color: rgb(0, 150, 201);
+}
+
+.disclosure-mark-hidden .arrow {
+    -fx-opacity: 0;
+}
+
+.ribbon-menu-tab-pane {
+  -fx-tab-min-width: 90px;
+  -fx-min-height: 150px;
+}
+
+.ribbon-menu-tab {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-tab:hover {
+  -fx-border-color: rgb(200, 200, 200);
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-tab:selected {
+  -fx-background-color: rgb(255, 255, 255);
+  -fx-border-color: rgb(200, 200, 200);
+  -fx-border-width: 1.0 1.0 0.0 1.0;
+}
+
+.ribbon-menu-groups-box {
+  -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(244, 244, 244) 100%);
+  -fx-border-color: rgb(103, 103, 103);
+  -fx-border-width: 0.0 0.0 0.0 0.0;
+  -fx-border-insets: 0.0;
+  -fx-padding: 0.4em 0.4em 0.4em 0.4em;
+  -fx-spacing: 0.333em;
+  -fx-alignment: TOP_LEFT;
+}
+
+.ribbon-menu-group-box {
+  -fx-background-color: transparent;
+  -fx-border-color: rgb(221, 221, 221);
+  -fx-border-width: 0.0 1.0 0.0 0.0;
+  -fx-border-insets: 0.0;
+  -fx-padding: 0.0 0.4em 0.0 0.0em;
+  -fx-alignment: TOP_CENTER;
+}
+
+.ribbon-menu-group-item-vbox-centered {
+    -fx-alignment: top-center;
+}
+
+.ribbon-menu-button:focused {
+    -fx-background-color: lightgrey;
+}
+
+.ribbon-menu-button:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 1);
+}
+
+.ribbon-menu-group-title {
+    -fx-text-fill: #6E6E6E;
+}
+
+.ribbon-button {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: TOP;
+}
+
+.ribbon-button .label {
+    -fx-text-alignment: center;
+}
+
+.ribbon-button-small {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: BASELINE_LEFT;
+    -fx-content-display: LEFT;
+}
+
+.ribbon-menu-choice-button .arrow, .ribbon-menu-choice-button .arrow-button {
+    -fx-alignment: bottom-right;
+}
+
+
+.ribbon-button:hover, .ribbon-button-small:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, 1);
+}
+
+.ribbon-button:focused, .ribbon-button-small:focused {
+    -fx-background-color: lightgrey;
+}
+
+.ribbon-button:armed, .ribbon-menu-small:armed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0.0, 0, -1);
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(214, 214, 214) 100%);
+}
+
+.ribbon-menu-button {
+    -fx-font-size: 14px;
+    -fx-background-color: transparent;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-content-display: TOP;
+}
+
+.label-efs-header-group {
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-border-color: gray;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+}
+
+.pane-efs-header {
+    -fx-background-color: linear-gradient(to bottom, #feffe7 0%,#dee7b3 100%);
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+}
+
+.pane-efs-header-motor {
+    -fx-background-color: linear-gradient(to bottom, #fceabb 0%,#fccd4d 100%);
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+}
+
+.pane-efs-header-getriebe {
+    -fx-background-color: linear-gradient(to bottom, #feffe8 0%,#d6dbbf 100%);
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+}
+
+.pane-efs-header-engine-gearbox {
+    -fx-background-color: linear-gradient(to bottom, #D6EEFF 0%,#AAC3D4 100%);
+    -fx-border-color: rgb(180, 180, 180);
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 1 0;
+}
+
+.text-field-efs-header {
+    -fx-background-insets: 1 0 1 0;
+}
+
+.button-teilenr-copy-paste {
+    -fx-alignment: CENTER;
+    -fx-content-display: CENTER;
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(244, 244, 244) 100%);
+    -fx-background-radius: 2;
+}
+
+.button-teilenr-copy-paste:hover {
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button-teilenr-copy-paste:armed {
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.3) , 5, 0.0 , 0 , -1 );
+    -fx-background-color: linear-gradient(to bottom, rgb(255, 255, 255) 10%, rgb(214, 214, 214) 100%);
+}
+
+.fzg-konfig-menu-list-view .list-cell {
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-background-color: rgb(255, 255, 255);
+}
+
+.fzg-konfig-menu-list-view .list-cell:selected {
+    -fx-text-background-color: rgb(0, 0, 0);
+    -fx-background-color: linear-gradient(to bottom, #feffe7 0%,#dee7b3 100%);
+}
+
+.fzg-konfig-split-pane:horizontal > .split-pane-divider {
+    -fx-padding: 1;
+}
+
+.fzg-konfig-split-pane:vertical > .split-pane-divider {
+    -fx-padding: 1;
+}
+
+.fzg-config-header {
+    -fx-background-color: linear-gradient(to bottom, #feffe7 0%,#dee7b3 100%);
+
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.errormessage-pane {
+    -fx-background-color: rgb(200, 200, 200);
+    -fx-color: white;
+}
+
+.label-menu-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.label-menu-text:selected {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-underline: true;
+}
+
+.headerText {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+
+.legende1 {
+    -fx-background-color: rgb(51, 102, 255);
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.legende2 {
+    -fx-background-color: rgb(102, 51, 204);
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.legende3 {
+    -fx-background-color: rgb(218, 0, 0);
+    -fx-border-radius: 5 5 5 5;
+    -fx-background-radius: 5 5 5 5;
+}
+
+.fzg-konfig-content-pane .table-view .column-header .label {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.fzg-konfig-content-pane .completion-status-bar {
+    -fx-alignment: center-left;
+}
+
+.solution-area {
+    -fx-spacing: 5;
+    -fx-padding: 5 5 5 5;
+}
+
+/* Specific style */
+#tableviewPrNummern .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#tableviewPrNummern .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#tableViewModelImport .table-row-cell:selected, #treeTableViewModell .tree-table-row-cell:selected {
+    /*-fx-background-color: rgba(50, 180, 255, 0.2);*/
+    -fx-background-color: rgba(0,255 , 0, 1);
+    -fx-selection-bar: rgba(35, 75, 190, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#partGroupTreeTableView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#partGroupTreeTableView .part-group-highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#partGroupTreeTableView .part-group-highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#partGroupTreeTableView .part-group-highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#partGroupTreeTableView .part-group-highlight-summary-row-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#partGroupTreeTableView .part-group-highlight-summary-col-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#partGroupTreeTableView .part-group-highlight-summary-item-cell{
+    -fx-background-color: rgb(153,225,220);
+}
+
+#partGroupTreeTableView .summary-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#partGroupTreeTableView .summary-row .part-group-highlight-col-selection:selected {
+    -fx-text-fill: black;
+}
+
+#fgSetTreeTableView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#fgSetTreeTableView .fg-set-highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#fgSetTreeTableView .fg-set-highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#fgSetTreeTableView .fg-set-highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#fgSetTreeTableView .fg-set-highlight-summary-row-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#fgSetTreeTableView .fg-set-highlight-summary-col-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#fgSetTreeTableView .fg-set-highlight-summary-item-cell{
+    -fx-background-color: rgb(153,225,220);
+}
+
+#fgSetTreeTableView .summary-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#fgSetTreeTableView .summary-row .fg-set-highlight-col-selection:selected {
+    -fx-text-fill: black;
+}
+
+#efsTreeTableView .tree-table-cell:updated-efs {
+    -fx-background-color: rgb(255,255,102);
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-border-color: rgb(255,204,0);
+}
+#efsTreeTableView .tree-table-cell:updated-efs:selected {
+    -fx-background-color: rgb(255,204,0);
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-border-color: rgb(255,153,0);
+}
+
+#efsTreeTableView .tree-table-cell:deleted-efs {
+    -fx-background-color: rgb(188,143,143);
+    -fx-text-fill: rgb(255,255,255);
+}
+#efsTreeTableView .tree-table-cell:deleted-efs:selected {
+    -fx-background-color: rgb(205,092,092);
+    -fx-text-fill: rgb(255,255,255);
+}
+
+#efsTreeTableView .tree-highlight-group-row {
+    -fx-background-color: rgba(0, 19, 85, 0.21);
+    -fx-border-color: white;
+    -fx-border-insets: 0 -1 0 -1;
+}
+
+#efsTreeTableView .tree-highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(35, 75, 190, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#efsTreeTableView .tree-highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(35, 75, 190, 0.0);
+}
+
+#efsTreeTableView .tree-highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#efsTreeTableView .tree-table-cell-empty-weight {
+    -fx-text-fill: rgb(165, 165, 165);
+}
+
+#efsTreeTableView .duplicate {
+    -fx-background-color: rgba(255, 197, 10, 0.2);
+}
+
+#costGroupTreeTableView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#costGroupTreeTableView .cost-group-highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+
+}
+
+#costGroupTreeTableView .cost-group-highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#costGroupTreeTableView .cost-group-highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#costGroupTreeTableView .cost-group-highlight-summary-row-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#costGroupTreeTableView .cost-group-highlight-summary-col-selection {
+    -fx-background-color: rgba(190, 190, 190, 0.4);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#costGroupTreeTableView .cost-group-highlight-summary-item-cell {
+    -fx-background-color: rgb(153,225,220);
+}
+
+#costGroupTreeTableView .summary-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#costGroupTreeTableView .summary-row .cost-group-highlight-col-selection:selected {
+    -fx-text-fill: black;
+}
+
+#sumCompareTableView .summary-group-column1-first {
+    -fx-background-color: rgba(205, 0, 120, 0.1);
+}
+
+#sumCompareTableView .summary-group-column-second {
+    -fx-background-color: rgba(205, 20, 0, 0.1);
+}
+
+#sumCompareTableView .change-cell {
+    -fx-background-color: rgba(255, 255, 102, 0.8);
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-border-color: rgb(255, 204, 0);
+}
+
+#errorTree .tree-table-row-cell:selected {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(35, 75, 190, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#errorTree .tree-table-cell:ignored .text {
+    -fx-fill: rgb(165, 165, 165);
+    -fx-strikethrough: true;
+}
+
+#partGroupCompareTreeView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#partGroupCompareTreeView .group-column1 {
+    -fx-background-color: rgba(205, 0, 120, 0.1);
+}
+
+#partGroupCompareTreeView .group-column2 {
+    -fx-background-color: rgba(205, 20, 0, 0.1);
+}
+
+#partGroupCompareTreeView .group-column3 {
+    -fx-background-color: rgba(205, 60, 120, 0.1);
+}
+
+#partGroupCompareTreeView .group-column4 {
+    -fx-background-color: rgba(205, 120, 120, 0.1);
+}
+
+#partGroupCompareTreeView .group-column5 {
+    -fx-background-color: rgba(205, 20, 120, 0.1);
+}
+
+#partGroupCompareTreeView .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#partGroupCompareTreeView .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#partGroupCompareTreeView .highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#partGroupCompareTreeView .part-group-highlight-summary-item-cell-compare {
+    -fx-background-color: rgb(153, 225, 220);
+}
+
+#partGroupCompareTreeView .part-group-last-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#fgSetCompareTreeView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#fgSetCompareTreeView .group-column1 {
+    -fx-background-color: rgba(205, 0, 120, 0.1);
+}
+
+#fgSetCompareTreeView .group-column2 {
+    -fx-background-color: rgba(205, 20, 0, 0.1);
+}
+
+#fgSetCompareTreeView .group-column3 {
+    -fx-background-color: rgba(205, 60, 120, 0.1);
+}
+
+#fgSetCompareTreeView .group-column4 {
+    -fx-background-color: rgba(205, 120, 120, 0.1);
+}
+
+#fgSetCompareTreeView .group-column5 {
+    -fx-background-color: rgba(205, 20, 120, 0.1);
+}
+
+#fgSetCompareTreeView .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#fgSetCompareTreeView .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#fgSetCompareTreeView .highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#fgSetCompareTreeView .fg-set-highlight-summary-item-cell-compare {
+    -fx-background-color: rgb(153, 225, 220);
+}
+
+#fgSetCompareTreeView .last-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#costGroupCompareTreeView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#costGroupCompareTreeView .group-column1 {
+    -fx-background-color: rgba(205, 0, 120, 0.1);
+}
+
+#costGroupCompareTreeView .group-column2 {
+    -fx-background-color: rgba(205, 20, 0, 0.1);
+}
+
+#costGroupCompareTreeView .group-column3 {
+    -fx-background-color: rgba(205, 60, 120, 0.1);
+}
+
+#costGroupCompareTreeView .group-column4 {
+    -fx-background-color: rgba(205, 120, 120, 0.1);
+}
+
+#costGroupCompareTreeView .group-column5 {
+    -fx-background-color: rgba(205, 20, 120, 0.1);
+}
+
+#costGroupCompareTreeView .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#costGroupCompareTreeView .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#costGroupCompareTreeView .highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#costGroupCompareTreeView .cost-group-highlight-summary-item-cell-compare {
+    -fx-background-color: rgb(153, 225, 220);
+}
+
+#costGroupCompareTreeView .cost-group-last-row {
+    -fx-background-color: rgba(205, 0, 20, 0.4);
+    -fx-font-weight: bold;
+}
+
+#configTreeView .tree-table-cell:parent-node {
+    -fx-font-weight: bold;
+}
+
+#configTreeView .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#configTreeView .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+#configTreeView .highlight-col-selection:selected {
+    -fx-text-fill: rgb(211, 148, 0);
+}
+
+#configTreeView .highlight-differences-description {
+    -fx-background-color: rgba(206, 199, 0, 0.43);
+}
+
+#configTreeView .highlight-differences {
+    -fx-background-color: rgba(122, 8, 12, 0.3);
+}
+
+#configTreeView .highlight-common {
+    -fx-background-color: rgba(19, 122, 10, 0.3);
+}
+
+#partlist-compare-treetableview .group-column1 {
+    -fx-background-color: rgba(205, 0, 120, 0.1);
+}
+
+#partlist-compare-treetableview .group-column2 {
+    -fx-background-color: rgba(205, 20, 0, 0.1);
+}
+
+#partlist-compare-treetableview .group-column3 {
+    -fx-background-color: rgba(205, 60, 120, 0.1);
+}
+
+#partlist-compare-treetableview .group-column4 {
+    -fx-background-color: rgba(205, 120, 120, 0.1);
+}
+
+#partlist-compare-treetableview .compare-status-deleted {
+    -fx-background-color: rgba(122, 8, 12, 0.3);
+}
+
+#partlist-compare-treetableview .compare-status-added {
+    -fx-background-color: rgba(122, 246, 86, 0.3);
+}
+
+#partlist-compare-treetableview .compare-status-changed {
+    -fx-background-color: rgba(255, 194, 57, 0.3);
+}
+
+#partlist-compare-treetableview .compare-status-changed-cell {
+    -fx-background-color: rgba(215, 157, 33, 0.31);
+}
+
+#partlist-compare-treetableview .highlight-row-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+#partlist-compare-treetableview .highlight-col-selection {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(0, 0, 0, 0.0);
+}
+
+.stammdatenTreeTable .tree-table-row-cell:selected {
+    -fx-background-color: rgba(50, 180, 255, 0.2);
+    -fx-selection-bar: rgba(35, 75, 190, 0.0);
+    -fx-text-background-color: BLACK;
+}
+
+
+.image-slider-button {
+    -fx-focus-color: lightgray;
+    -fx-faint-focus-color: lightgray;
+    -fx-background-insets: 0;
+}
+.image-slider-button:focused {
+    -fx-focus-color: lightgray;
+    -fx-faint-focus-color: lightgray;
+    -fx-background-insets: 0;
+}
+
+#imageListView {
+    -fx-padding: 1;
+    -fx-background-color: lightgray;
+}
+
+#imageListView .list-cell {
+    -fx-padding: 2;
+    -fx-background-insets: 0, 2;
+
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-background-color: rgb(255, 255, 255);
+}
+
+#imageListView .list-cell:selected {
+    -fx-background-color: rgb(225, 225, 225);
+}
+
+#imageListView .list-view .scroll-bar:horizontal .increment-arrow,
+#imageListView .list-view .scroll-bar:horizontal .decrement-arrow,
+#imageListView .list-view .scroll-bar:horizontal .increment-button,
+#imageListView .list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}

@@ -1,0 +1,8 @@
+.combo-box {
+  -fx-pref-width: 250;
+}
+
+/** Size the combo-box drop down list. */
+.combo-box-popup > .list-view {
+  -fx-pref-width: 250;
+}

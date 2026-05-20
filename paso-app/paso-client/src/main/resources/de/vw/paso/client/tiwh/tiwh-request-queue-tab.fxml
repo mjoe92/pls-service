@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<Tab xmlns="http://javafx.com/javafx"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:id="tiWhRequestQueueTab"
+     text="%tab.title.tiwh.request.queue"
+     fx:controller="de.vw.paso.client.tiwh.TiWhRequestQueueTabController">
+
+    <CustomTableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="colProductId" text="%label.productId"/>
+            <TableColumn fx:id="colRequestSequence" text="%label.requestSequence"/>
+            <TableColumn fx:id="colRequesterIds" text="%label.requesterIds"/>
+            <TableColumn fx:id="colRequested" text="%queue.requested"/>
+            <TableColumn fx:id="colProcessing" text="%queue.processing"/>
+        </columns>
+    </CustomTableView>
+
+</Tab>

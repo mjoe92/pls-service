@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextField?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextFieldClearable?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.content.modell.ModelController"
+            fx:id="contentPane">
+    <top>
+        <fx:include fx:id="errorMessagePane" source="../error-message-pane.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="5">
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="%modell.ohne"/>
+                <CheckBox fx:id="checkboxOhneModell"/>
+                <Label text="%vertriebsschluessel"/>
+                <PasoCustomTextField
+                        minWidth="100.0" maxWidth="100.0" fx:id="textFieldDistributionKey"
+                        upperCase="true" maxTextLength="2"/>
+                <PasoCustomTextFieldClearable
+                        minWidth="150.0" maxWidth="150.0"
+                        promptText="%search.colon" fx:id="textFieldSearch"/>
+            </HBox>
+
+            <SplitPane fx:id="tableSplitPane" VBox.vgrow="ALWAYS">
+                <CustomTableView fx:id="tableViewModelImport">
+                    <columns>
+                        <TableColumn fx:id="colSalesRegion" text="%tablecolumn.vertriebsregion"/>
+                        <TableColumn fx:id="colSalesKey" text="%tablecolumn.saleskey"/>
+                        <TableColumn fx:id="colModelYear" text="%tablecolumn.modelljahr"/>
+                        <TableColumn fx:id="colStartDate" text="%tablecolumn.einsatzdatum"/>
+                        <TableColumn fx:id="colImportStatus" text="%tablecolumn.importstatus"/>
+                    </columns>
+                </CustomTableView>
+
+                <CustomTreeTableView fx:id="treeTableViewModell">
+                    <columns>
+                        <TreeTableColumn fx:id="colRadio"/>
+                        <TreeTableColumn fx:id="colModel"/>
+                        <TreeTableColumn fx:id="colVersion"/>
+                        <TreeTableColumn fx:id="colStatus"/>
+                        <TreeTableColumn fx:id="colDescription"/>
+                    </columns>
+                </CustomTreeTableView>
+            </SplitPane>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextField?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.efs.views.suche.SearchTabController"
+        fx:id="tabSearch"
+
+        text="%tab.title.suche"
+>
+    <content>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="NEVER"/>
+                <RowConstraints vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <Label
+                        text="%search"
+                        minHeight="24.0"
+                        maxHeight="24.0"
+                >
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0"/>
+                    </GridPane.margin>
+                </Label>
+
+                <PasoCustomTextField
+                        GridPane.columnIndex="1"
+                        fx:id="searchTextField"
+                        maxTextLength="15"
+                        upperCase="true"
+                        clearable="false"
+
+                        minWidth="160.0"
+                        maxWidth="160.0"
+
+                        onKeyPressed="#handleSearchKeyPressed"
+                >
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0"/>
+                    </GridPane.margin>
+                </PasoCustomTextField>
+
+                <Button
+                        GridPane.columnIndex="2"
+                        fx:id="searchButton"
+
+                        minWidth="100.0"
+                        maxWidth="100.0"
+                        minHeight="24.0"
+                        maxHeight="24.0"
+
+                        onAction="#handleSearch"
+                        text="%search"
+                >
+                    <GridPane.margin>
+                        <Insets bottom="2.0" left="5.0" top="1.0"/>
+                    </GridPane.margin>
+                </Button>
+
+                <CustomTableView
+                        GridPane.rowIndex="1"
+                        GridPane.columnSpan="3"
+
+                        GridPane.hgrow="ALWAYS"
+                        GridPane.vgrow="ALWAYS"
+
+                        fx:id="searchEfsTableView"
+                        tableMenuButtonVisible="true"
+                >
+                    <columns>
+                        <TableColumn fx:id="colPartNumber" text="%tablecolumn.teilenummer"/>
+                        <TableColumn fx:id="colPartNumberVornummer" text="%tablecolumn.teilenummer.vornummer"/>
+                        <TableColumn fx:id="colPartNumberMittelgruppe" text="%tablecolumn.teilenummer.mittelgruppe"/>
+                        <TableColumn fx:id="colPartNumberEndNumber" text="%tablecolumn.teilenummer.endnumber"/>
+                        <TableColumn fx:id="colPartNumberIndex" text="%tablecolumn.teilenummer.index"/>
+                        <TableColumn fx:id="colDescription1" text="%tablecolumn.benennung"/>
+                        <TableColumn fx:id="colDescription2" text="%tablecolumn.zusatzbenennung"/>
+                        <TableColumn fx:id="colBomNumber" text="%tablecolumn.bomnumber"/>
+                        <TableColumn fx:id="colProduct" text="%tablecolumn.product"/>
+                        <TableColumn fx:id="colPartType" text="%tablecolumn.parttype"/>
+
+                        <TableColumn fx:id="colNodeId" text="%tablecolumn.nodeId"/>
+                        <TableColumn fx:id="colNodeLabel" text="%tablecolumn.nodeLabel"/>
+                        <TableColumn fx:id="colNodeLevel" text="%tablecolumn.nodeLevel"/>
+                        <TableColumn fx:id="colNodeType" text="%tablecolumn.nodeType"/>
+
+                        <TableColumn fx:id="colAp" text="%tablecolumn.ap"/>
+                        <TableColumn fx:id="colSetKey" text="%tablecolumn.setkey"/>
+                        <TableColumn fx:id="colCostGroup" text="%tablecolumn.costgroup"/>
+                        <TableColumn fx:id="colConstructionsGroup" text="%tablecolumn.constructionsGroup"/>
+                        <TableColumn fx:id="colProductStructure" text="%tablecolumn.productStructure"/>
+
+                        <TableColumn fx:id="colQuantity" text="%tablecolumn.menge"/>
+                        <TableColumn fx:id="colQuantityUnit" text="%tablecolumn.einheit"/>
+                        <TableColumn fx:id="colQuantityUnitExtended" text="%tablecolumn.einheitErweitert"/>
+
+                        <TableColumn fx:id="colWeightControlFlag" text="%tablecolumn.gws"/>
+
+                        <TableColumn fx:id="colWeightNode" text="%tablecolumn.gewichtknoten"/>
+
+                        <TableColumn fx:id="colWeightAll" text="%tablecolumn.gewichtgesamt"/>
+                        <TableColumn fx:id="colWeightPrio" text="%tablecolumn.gewichtprio"/>
+
+                        <TableColumn fx:id="colWeightWeightedTe" text="%tablecolumn.konstgewogen"/>
+                        <TableColumn fx:id="colWeightWeightedTeDate" text="%tablecolumn.konstgewogendate"/>
+                        <TableColumn fx:id="colWeightCalculatedTe" text="%tablecolumn.konsterrechnet"/>
+                        <TableColumn fx:id="colWeightCalculatedTeDate" text="%tablecolumn.konsterrechnetdate"/>
+                        <TableColumn fx:id="colWeightEstimatedTe" text="%tablecolumn.konstgeschaetzt"/>
+                        <TableColumn fx:id="colWeightEstimatedTeDate" text="%tablecolumn.konstgeschaetztdate"/>
+                        <TableColumn fx:id="colWeightWeightedProd" text="%tablecolumn.prodgewogen"/>
+                        <TableColumn fx:id="colWeightWeightedProdDate" text="%tablecolumn.prodgewogendate"/>
+
+                        <TableColumn fx:id="colBeginDateKey" text="%tablecolumn.einsatzschluessel"/>
+                        <TableColumn fx:id="colDrawingDate" text="%tablecolumn.zeichnungdatum"/>
+                        <TableColumn fx:id="colDrawingStatus" text="%tablecolumn.zeichnungstand"/>
+
+                        <TableColumn fx:id="colBeginDate" text="%tablecolumn.einsatzserie"/>
+                        <TableColumn fx:id="colEndDateKey" text="%tablecolumn.entfallschluessel"/>
+
+                        <TableColumn fx:id="colEndDate" text="%tablecolumn.entfallserie"/>
+
+                        <TableColumn fx:id="colAssemblyIndicator" text="%tablecolumn.assemblyindicator"/>
+                        <TableColumn fx:id="colConstructionsState" text="%tablecolumn.constructionsState"/>
+                        <TableColumn fx:id="colQuality" text="%tablecolumn.quality"/>
+                        <TableColumn fx:id="colMatThickness" text="%tablecolumn.materialThickness"/>
+                        <TableColumn fx:id="colSeeDrawing" text="%tablecolumn.seedrawing"/>
+
+                        <TableColumn fx:id="colRespConstr1" text="%tablecolumn.respConstr1"/>
+                        <TableColumn fx:id="colRespConstr2" text="%tablecolumn.respConstr2"/>
+
+                        <TableColumn fx:id="colBuildSampleApproval" text="%tablecolumn.buildsampleapproval"/>
+                        <TableColumn fx:id="colBuildSampleApprovalDate" text="%tablecolumn.buildsampleapprovalDate"/>
+
+                        <TableColumn fx:id="colTechnicallyOkay" text="%tablecolumn.technicallyOk"/>
+                        <TableColumn fx:id="colRelDateSoll" text="%tablecolumn.relDateSoll"/>
+
+                        <TableColumn fx:id="colDesignerName" text="%tablecolumn.designerName"/>
+                        <TableColumn fx:id="colDesignerCostGroup" text="%tablecolumn.designerCostGroup"/>
+                        <TableColumn fx:id="colDesignerPhone" text="%tablecolumn.designerPhoneNum"/>
+
+                        <TableColumn fx:id="colKStandRelDate" text="%tablecolumn.kStandRelDate"/>
+                        <TableColumn fx:id="colTioFreiRelDate" text="%tablecolumn.tioFreiRelDate"/>
+
+                        <TableColumn fx:id="colMFPStatus" text="%tablecolumn.MFPStatus"/>
+                        <TableColumn fx:id="colMFPThickness" text="%tablecolumn.MFPThickness"/>
+
+                        <TableColumn fx:id="colKseKz" text="%tablecolumn.kseKz"/>
+                        <TableColumn fx:id="colWeightAcceptedFromEpis" text="%tablecolumn.weightAcceptedFromEpis"/>
+
+                        <TableColumn fx:id="colBaukastenFlag" text="%tablecolumn.baukastenFlag"/>
+                        <TableColumn fx:id="colBaukastenStatus" text="%tablecolumn.baukastenStatus"/>
+                        <TableColumn fx:id="colBaukastenNodeId" text="%tablecolumn.baukastenNodeId"/>
+
+                        <TableColumn fx:id="colProcessStatus" text="%tablecolumn.processStatus"/>
+                        <TableColumn fx:id="colDmuRelevant" text="%tablecolumn.dmuRelevant"/>
+                        <TableColumn fx:id="colMaterialType" text="%tablecolumn.materialtType"/>
+
+                        <TableColumn fx:id="colEarliestPvs" text="%tablecolumn.earliestPvs"/>
+                        <TableColumn fx:id="colEarliestNs" text="%tablecolumn.earliestNs"/>
+                        <TableColumn fx:id="colEarliestSop" text="%tablecolumn.earliestSop"/>
+
+                        <TableColumn fx:id="colPActivationDate" text="%tablecolumn.pActivationDate"/>
+                        <TableColumn fx:id="colConstructureDate" text="%tablecolumn.konstructureDate"/>
+                        <TableColumn fx:id="colAvonStatus" text="%tablecolumn.avonStatus"/>
+
+                        <TableColumn fx:id="cog" text="%tablecolumn.cog"/>
+
+
+                        <TableColumn fx:id="colWahlweiseFall" text="%tablecolumn.wahlweiseFall"/>
+                        <TableColumn fx:id="colWahlweiseNr" text="%tablecolumn.wahlweiseNr"/>
+
+                        <TableColumn fx:id="colPrNumberRule" text="%tablecolumn.prnummern"/>
+
+                        <TableColumn fx:id="colTisSort" text="%tablecolumn.sortierung"/>
+                    </columns>
+                </CustomTableView>
+            </children>
+        </GridPane>
+    </content>
+</Tab>

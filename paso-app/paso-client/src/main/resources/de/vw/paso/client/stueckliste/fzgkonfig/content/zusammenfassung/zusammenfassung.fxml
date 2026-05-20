@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.content.zusammenfassung.ZusammenfassungController"
+        fx:id="contentPane">
+    <top>
+        <fx:include fx:id="errorMessagePane" source="../error-message-pane.fxml"/>
+    </top>
+
+    <center>
+        <BorderPane>
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <center>
+                <VBox spacing="5">
+                    <VBox spacing="5"
+                          fx:id="paneZusammenfassung"/>
+                    <Button fx:id="copyButton" text="%copy">
+                        <tooltip>
+                            <Tooltip text="%copy"/>
+                        </tooltip>
+                    </Button>
+                </VBox>
+            </center>
+
+            <bottom>
+                <VBox spacing="5">
+                    <padding>
+                        <Insets left="5" right="5" top="5" bottom="5"/>
+                    </padding>
+                    <VBox spacing="5">
+                        <Label text="%options.label" styleClass="headerText"/>
+                        <VBox spacing="5">
+                            <HBox alignment="CENTER_LEFT" spacing="5">
+                                <Label text="%vehicleconfig.wizard.filter.smartfixactive.label">
+                                </Label>
+                                <CheckBox fx:id="smartFixCheckBox"
+                                          text="%vehicleconfig.wizard.filter.smartfixactive.checkbox">
+                                    <tooltip>
+                                        <Tooltip text="%vehicleconfig.wizard.filter.smartfixactive.tooltip"/>
+                                    </tooltip>
+                                </CheckBox>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <children>
+                                    <Label text="%vehicleconfig.wizard.filter.setversion.label">
+                                    </Label>
+                                    <ComboBox fx:id="setVersionCheckBox">
+                                    </ComboBox>
+                                    <CheckBox fx:id="applyDefaultSetVersionCheckBox"
+                                              text="%vehicleconfig.wizard.filter.smartfixactive.default.setversion.checkbox">
+                                        <tooltip>
+                                            <Tooltip text="%vehicleconfig.wizard.filter.update.setversion.tooltip"/>
+                                        </tooltip>
+                                    </CheckBox>
+                                </children>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>

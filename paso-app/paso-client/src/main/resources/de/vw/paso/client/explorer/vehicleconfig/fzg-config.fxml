@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TreeView?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="de.vw.paso.client.explorer.vehicleconfig.VehicleConfigurationController"
+        fx:id="tab"
+>
+    <content>
+        <TreeView fx:id="vehicleTree"/>
+    </content>
+</Tab>

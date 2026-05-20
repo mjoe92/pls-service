@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.menu.item.FzgKonfigStuecklisteMenuItemController"
+      fx:id="paneFzgKonfigMenu"
+      spacing="5.0">
+    <children>
+        <HBox spacing="5">
+            <children>
+                <Label fx:id="labelIndex" styleClass="label-menu-text"/>
+                <Label fx:id="labelName" styleClass="label-menu-text"/>
+                <ImageView fx:id="statusIcon"/>
+            </children>
+        </HBox>
+        <HBox spacing="5">
+            <children>
+                <Label styleClass="label-menu-text" text="%stueckliste.fahrzeug"/>
+                <Label fx:id="labelFzg" styleClass="label-menu-text"/>
+                <ImageView fx:id="iconFzg"/>
+            </children>
+        </HBox>
+        <HBox spacing="5">
+            <children>
+                <Label styleClass="label-menu-text" text="%stueckliste.motor"/>
+                <Label fx:id="labelMot" styleClass="label-menu-text"/>
+                <ImageView fx:id="iconMot"/>
+            </children>
+        </HBox>
+        <HBox spacing="5">
+            <Label styleClass="label-menu-text" text="%stueckliste.getriebe"/>
+            <Label fx:id="labelGetr" styleClass="label-menu-text"/>
+            <ImageView fx:id="iconGetr"/>
+        </HBox>
+    </children>
+</VBox>

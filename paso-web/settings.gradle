@@ -1,0 +1,13 @@
+pluginManagement {
+    repositories {
+        maven {
+            url 'https://jfrog.devstack.vwgroup.com/artifactory/public/'
+            credentials {
+                username = "$artifactory_user"
+                password = "$artifactory_password"
+            }
+        }
+    }
+}
+
+rootProject.name = 'paso-web'

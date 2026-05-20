@@ -1,0 +1,42 @@
+# File is separated into sections by a line containing "---"
+# First section is the header.
+# It should follow a simple java properties-file syntax
+
+Created-By-Version: 120
+Product: 5G0
+Date: 12.23.1230
+Whatever: hello
+
+---
+
+# Second section is unique PR-Number-Rules
+# An EBOM-File of 200.000 entries might just have 10.000 unique PR-Number rules
+# Parsing/Evaluating is expensive so should be done just once for a set of pr-numbers
+# during creation of partlist, evaluate every entry against pr-configuration and save
+# fullfilled rule ids in a bitset for selecting parts
+
+# format can be id;pr-rule
+
+1;+7HB/7HD/7HE/7HJ
+2;+7HA/7HB
+
+--- 
+
+# next section contains nodes/ebom/mara in a format optimized for a streaming read 
+# and evaluation. 
+# First character of line specifies the type
+# N=Node
+# P=Part (our prepared mix of ebom/mara/maktx)
+# Our preprocessor guarantees that each part that belongs to a node, is listed directly
+# after the node
+# Nodes should be sorted as well, so that children a just below their parent nodes/ebom/mara
+
+N Scheiben;id=12312;5G0;foo;bar
+P Seitenscheibe;Normal;5G0.123.456.CE;pr-rule-id=1
+P Seitenscheibe;Abgedunkelt;5G0.123.456.AG;pr-rule-id=2
+N Scheibendichtungen;id=4983;parentid = 12312
+P Schreibendichtung;Hartgummi;5G0.671.123.A;pr-rule-id=2
+
+ 
+
+

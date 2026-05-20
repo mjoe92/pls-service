@@ -1,0 +1,26 @@
+body *
+{
+font-family: Verdana, Helvetica, Arial, sans-serif !important;
+}
+body {
+margin: 50px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: right;
+  padding: 8px;
+}
+
+a, img {
+padding-top: 5px;
+}
+
+footer {
+    clear: both;
+    position: absolute;
+    bottom: 50px;
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.control.breadcrumb.PasoBreadCrumbBar?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.historie.columns.EfsTreeTableColumn?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.efs.tree.SingleVehiclePartListController"
+        fx:id="borderPane">
+
+    <top>
+        <GridPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+                  prefHeight="26.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="26.0" minWidth="26.0" prefWidth="26.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="26.0" minWidth="26.0" prefWidth="26.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="22.0" minWidth="22.0" prefWidth="22.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+
+            <PasoBreadCrumbBar fx:id="breadCrumbBar"/>
+
+        </GridPane>
+    </top>
+
+    <center>
+        <CustomTreeTableView fx:id="efsTreeTableView" tableMenuButtonVisible="true">
+            <columns>
+                <EfsTreeTableColumn fx:id="colPartNumber" text="%treetablecolumn.teilenummer"/>
+                <EfsTreeTableColumn fx:id="colPartNumberVornummer" text="%treetablecolumn.teilenummer.vornummer"/>
+                <EfsTreeTableColumn fx:id="colPartNumberMittelgruppe" text="%treetablecolumn.teilenummer.mittelgruppe"/>
+                <EfsTreeTableColumn fx:id="colPartNumberEndNumber" text="%treetablecolumn.teilenummer.endnumber"/>
+                <EfsTreeTableColumn fx:id="colPartNumberIndex" text="%treetablecolumn.teilenummer.index"/>
+                <EfsTreeTableColumn fx:id="colDescription1" text="%treetablecolumn.benennung"/>
+                <EfsTreeTableColumn fx:id="colDescription2" text="%treetablecolumn.zusatzbenennung"/>
+                <EfsTreeTableColumn fx:id="colBomNumber" text="%treetablecolumn.bomnumber"/>
+                <EfsTreeTableColumn fx:id="colProduct" text="%treetablecolumn.product"/>
+                <EfsTreeTableColumn fx:id="colPartType" text="%treetablecolumn.parttype"/>
+
+                <EfsTreeTableColumn fx:id="colNodeId" text="%treetablecolumn.nodeId"/>
+                <EfsTreeTableColumn fx:id="colNodeLabel" text="%treetablecolumn.nodeLabel"/>
+                <EfsTreeTableColumn fx:id="colNodeValueParent" text="%treetablecolumn.nodeValueParent"/>
+                <EfsTreeTableColumn fx:id="colNodeValue" text="%treetablecolumn.nodeValue"/>
+                <EfsTreeTableColumn fx:id="colNodeLevel" text="%treetablecolumn.nodeLevel"/>
+                <EfsTreeTableColumn fx:id="colNodeType" text="%treetablecolumn.nodeType"/>
+
+                <EfsTreeTableColumn fx:id="colAp" text="%treetablecolumn.ap"/>
+                <EfsTreeTableColumn fx:id="colSetKey" text="%treetablecolumn.set"/>
+                <EfsTreeTableColumn fx:id="colCostGroup" text="%treetablecolumn.costgroup"/>
+                <EfsTreeTableColumn fx:id="colConstructionsGroup" text="%treetablecolumn.constructionsGroup"/>
+                <EfsTreeTableColumn fx:id="colProductStructure" text="%treetablecolumn.productStructure"/>
+
+                <EfsTreeTableColumn fx:id="colPositionVariant" text="%treetablecolumn.positionVariant"/>
+                <EfsTreeTableColumn fx:id="colDeletionFlag" text="%treetablecolumn.deletionFlag"/>
+
+
+                <EfsTreeTableColumn fx:id="colQuantity" text="%treetablecolumn.menge"/>
+                <EfsTreeTableColumn fx:id="colQuantityUnit" text="%treetablecolumn.einheit"/>
+                <EfsTreeTableColumn fx:id="colQuantityUnitExtended" text="%treetablecolumn.einheitErweitert"/>
+
+                <EfsTreeTableColumn fx:id="colWeightControlFlag" text="%treetablecolumn.gws"/>
+
+                <EfsTreeTableColumn fx:id="colWeightNode" text="%treetablecolumn.gewichtknoten"/>
+
+                <EfsTreeTableColumn fx:id="colWeightAll" text="%treetablecolumn.gewichtgesamt"/>
+                <EfsTreeTableColumn fx:id="colWeightPrio" text="%treetablecolumn.gewichtprio"/>
+
+                <EfsTreeTableColumn fx:id="colWeightWeightedTe" text="%treetablecolumn.konstgewogen"/>
+                <EfsTreeTableColumn fx:id="colWeightWeightedTeDate" text="%treetablecolumn.konstgewogendate"/>
+                <EfsTreeTableColumn fx:id="colWeightCalculatedTe"
+                                    text="%treetablecolumn.konsterrechnet"/>
+                <EfsTreeTableColumn fx:id="colWeightCalculatedTeDate"
+                                    text="%treetablecolumn.konsterrechnetdate"/>
+                <EfsTreeTableColumn fx:id="colWeightEstimatedTe"
+                                    text="%treetablecolumn.konstgeschaetzt"/>
+                <EfsTreeTableColumn fx:id="colWeightEstimatedTeDate"
+                                    text="%treetablecolumn.konstgeschaetztdate"/>
+                <EfsTreeTableColumn fx:id="colWeightWeightedProd" text="%treetablecolumn.prodgewogen"/>
+                <EfsTreeTableColumn fx:id="colWeightWeightedProdDate" text="%treetablecolumn.prodgewogendate"/>
+
+                <EfsTreeTableColumn fx:id="colBeginDateKey"
+                                    text="%treetablecolumn.einsatzschluessel"/>
+                <EfsTreeTableColumn fx:id="colDrawingDate" text="%treetablecolumn.zeichnungdatum"/>
+                <EfsTreeTableColumn fx:id="colDrawingStatus" text="%treetablecolumn.zeichnungstand"/>
+
+                <EfsTreeTableColumn fx:id="colBeginDate" text="%treetablecolumn.einsatzserie"/>
+                <EfsTreeTableColumn fx:id="colEndDateKey"
+                                    text="%treetablecolumn.entfallschluessel"/>
+
+                <EfsTreeTableColumn fx:id="colEndDate" text="%treetablecolumn.entfallserie"/>
+
+                <EfsTreeTableColumn fx:id="colAssemblyIndicator" text="%treetablecolumn.assemblyindicator"/>
+                <EfsTreeTableColumn fx:id="colConstructionsState" text="%treetablecolumn.constructionsState"/>
+                <EfsTreeTableColumn fx:id="colQuality" text="%treetablecolumn.quality"/>
+                <EfsTreeTableColumn fx:id="colMatThickness" text="%treetablecolumn.materialThickness"/>
+                <EfsTreeTableColumn fx:id="colSeeDrawing" text="%treetablecolumn.seedrawing"/>
+
+                <EfsTreeTableColumn fx:id="colRespConstr1" text="%treetablecolumn.respConstr1"/>
+                <EfsTreeTableColumn fx:id="colRespConstr2" text="%treetablecolumn.respConstr2"/>
+
+                <EfsTreeTableColumn fx:id="colBuildSampleApproval" text="%treetablecolumn.buildsampleapproval"/>
+                <EfsTreeTableColumn fx:id="colBuildSampleApprovalDate" text="%treetablecolumn.buildsampleapprovalDate"/>
+
+                <EfsTreeTableColumn fx:id="colTechnicallyOkay" text="%treetablecolumn.technicallyOk"/>
+                <EfsTreeTableColumn fx:id="colRelDateSoll" text="%treetablecolumn.relDateSoll"/>
+
+                <EfsTreeTableColumn fx:id="colDesignerName" text="%treetablecolumn.designerName"/>
+                <EfsTreeTableColumn fx:id="colDesignerCostGroup" text="%treetablecolumn.designerCostGroup"/>
+                <EfsTreeTableColumn fx:id="colDesignerPhone" text="%treetablecolumn.designerPhoneNum"/>
+
+                <EfsTreeTableColumn fx:id="colKStandRelDate" text="%treetablecolumn.kStandRelDate"/>
+                <EfsTreeTableColumn fx:id="colTioFreiRelDate" text="%treetablecolumn.tioFreiRelDate"/>
+
+                <EfsTreeTableColumn fx:id="colMFPStatus" text="%treetablecolumn.MFPStatus"/>
+                <EfsTreeTableColumn fx:id="colMFPThickness" text="%treetablecolumn.MFPThickness"/>
+
+                <EfsTreeTableColumn fx:id="colKseKz" text="%treetablecolumn.kseKz"/>
+                <EfsTreeTableColumn fx:id="colWeightAcceptedFromEpis" text="%treetablecolumn.weightAcceptedFromEpis"/>
+
+                <EfsTreeTableColumn fx:id="colBaukastenFlag" text="%treetablecolumn.baukastenFlag"/>
+                <EfsTreeTableColumn fx:id="colBaukastenStatus" text="%treetablecolumn.baukastenStatus"/>
+                <EfsTreeTableColumn fx:id="colBaukastenNodeId" text="%treetablecolumn.baukastenNodeId"/>
+
+                <EfsTreeTableColumn fx:id="colProcessStatus" text="%treetablecolumn.processStatus"/>
+                <EfsTreeTableColumn fx:id="colDmuRelevant" text="%treetablecolumn.dmuRelevant"/>
+                <EfsTreeTableColumn fx:id="colMaterialType" text="%treetablecolumn.materialtType"/>
+
+                <EfsTreeTableColumn fx:id="colEarliestPvs" text="%treetablecolumn.earliestPvs"/>
+                <EfsTreeTableColumn fx:id="colEarliestNs" text="%treetablecolumn.earliestNs"/>
+                <EfsTreeTableColumn fx:id="colEarliestSop" text="%treetablecolumn.earliestSop"/>
+
+                <EfsTreeTableColumn fx:id="colPActivationDate" text="%treetablecolumn.pActivationDate"/>
+                <EfsTreeTableColumn fx:id="colConstructureDate" text="%treetablecolumn.konstructureDate"/>
+                <EfsTreeTableColumn fx:id="colAvonStatus" text="%treetablecolumn.avonStatus"/>
+
+                <EfsTreeTableColumn fx:id="colCog" text="%treetablecolumn.cog"/>
+
+                <EfsTreeTableColumn fx:id="colWahlweiseFall" text="%treetablecolumn.wahlweiseFall"/>
+                <EfsTreeTableColumn fx:id="colWahlweiseNr" text="%treetablecolumn.wahlweiseNr"/>
+
+                <EfsTreeTableColumn fx:id="colPrNumberRule" text="%treetablecolumn.prnummern"/>
+
+                <EfsTreeTableColumn fx:id="colTisSort" text="%treetablecolumn.sortierung"/>
+            </columns>
+        </CustomTreeTableView>
+    </center>
+</BorderPane>

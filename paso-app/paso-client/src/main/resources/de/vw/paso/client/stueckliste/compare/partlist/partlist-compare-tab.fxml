@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<Tab xmlns="http://javafx.com/javafx"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:controller="de.vw.paso.client.stueckliste.compare.partlist.PartListCompareTabController"
+     fx:id="partlistTab"
+     text="%tab.partlist.title">
+
+    <BorderPane fx:id="partlistTabContent">
+
+    </BorderPane>
+</Tab>

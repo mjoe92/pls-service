@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunPasoWebLocal" type="Application" factoryName="Application">
+    <envs>
+      <env name="SPRING_PROFILES_ACTIVE" value="local" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="de.vw.paso.web.PasoWebApplication" />
+    <module name="paso-web.main" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="de.vw.paso.web.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

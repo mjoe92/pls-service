@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.content.konfiguration.ConfigurationController"
+        fx:id="contentPane"
+>
+    <top>
+        <fx:include fx:id="errorMessagePane" source="../error-message-pane.fxml"/>
+    </top>
+    <center>
+        <VBox spacing="5">
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <children>
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <children>
+                        <TextField fx:id="textFieldSearch" maxWidth="150.0" minWidth="150.0"
+                                   promptText="%search.colon"/>
+                        <ComboBox fx:id="filterModeBox"/>
+                        <Button fx:id="prDefaultFillButton" text="%pr.fillDefault">
+                            <tooltip>
+                                <Tooltip text="%pr.fillDefault"/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="prStringButton" text="%pr.nummern">
+                            <tooltip>
+                                <Tooltip text="%pr.nummern"/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="prResetButton" text="%pr.reset">
+                            <tooltip>
+                                <Tooltip text="%pr.reset"/>
+                            </tooltip>
+                        </Button>
+                        <Button disable="true" text="%uebernehmen.von">
+                            <tooltip>
+                                <Tooltip text="%uebernehmen.von"/>
+                            </tooltip>
+                        </Button>
+                        <Button disable="true" text="%vergleichen.mit">
+                            <tooltip>
+                                <Tooltip text="%vergleichen.mit"/>
+                            </tooltip>
+                        </Button>
+                        <Button disable="true" text="%baubarkeitspruefung">
+                            <tooltip>
+                                <Tooltip text="%baubarkeitspruefung"/>
+                            </tooltip>
+                        </Button>
+                        <Button fx:id="reportButton" text="%exportpr">
+                            <tooltip>
+                                <Tooltip text="%exportpr"/>
+                            </tooltip>
+                        </Button>
+                        <Label fx:id="validDateLabel"/>
+                    </children>
+                </HBox>
+                <CustomTreeTableView fx:id="tableviewPrNummern" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TreeTableColumn fx:id="prNumberFamily" text="%tablecolumn.familie"/>
+                        <TreeTableColumn fx:id="prNumber" text="%tablecolumn.prnumber"/>
+                        <TreeTableColumn fx:id="description1" text="%tablecolumn.prnummer.bezeichnung"/>
+                        <TreeTableColumn fx:id="description2" text="%tablecolumn.prnummer.bezeichnung2"/>
+                        <TreeTableColumn fx:id="prNumberStatus" text="%tablecolumn.prnummer.status"/>
+                        <TreeTableColumn fx:id="prNumberBeginDate" text="%tablecolumn.prnummer.einsatz"/>
+                        <TreeTableColumn fx:id="prNumberBeginDateKey" text="%tablecolumn.prnummer.einsatzschl"/>
+                        <TreeTableColumn fx:id="prNumberEndDate" text="%tablecolumn.prnummer.entfall"/>
+                        <TreeTableColumn fx:id="prNumberEndDateKey" text="%tablecolumn.prnummer.entfallschl"/>
+                        <!--                        <TreeTableColumn fx:id="salesSetting" text="%tablecolumn.prnummer.salesSetting"/>-->
+                    </columns>
+                </CustomTreeTableView>
+
+                <fx:include fx:id="completionStatusBar" GridPane.rowIndex="2" GridPane.columnSpan="2"
+                            source="../../../../control/status/completion-status-bar.fxml"/>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

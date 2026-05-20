@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.vw.paso'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    maven {
+        url 'https://jfrog.devstack.vwgroup.com/artifactory/public/'
+        credentials {
+            username = "$artifactory_user"
+            password = "$artifactory_password"
+        }
+    }
+}
+
+dependencies {
+    implementation "org.apache.commons:commons-lang3:3.17.0"
+    implementation "com.google.guava:guava:33.4.8-jre"
+
+    implementation project(':part-list-library')
+}

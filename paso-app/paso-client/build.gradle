@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+description = 'Paso Client'
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+
+dependencies {
+    implementation project(':paso-share')
+
+    // JavaFX
+    implementation libraries.javaFxBase
+    implementation libraries.javaFxGraphics
+    implementation libraries.javaFxControls
+    implementation libraries.javaFxFxml
+    implementation libraries.javaFxWeb
+    implementation libraries.javaFxMedia
+
+    implementation libraries.apachePoi
+    implementation libraries.apacheLog4jToSlf4j
+    implementation libraries.commonsHttpClient
+    implementation libraries.commonsLang3
+    implementation libraries.commonsText
+    implementation libraries.guava
+    implementation libraries.logbackClassic
+    implementation libraries.slf4j
+    implementation libraries.jacksonDataformatXml
+
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    testImplementation libraries.springTest
+    testImplementation libraries.junitJupiter
+    testRuntimeOnly libraries.junitPlatformLauncher
+}
+
+jar {
+    doFirst {
+        manifest {
+            attributes 'Implementation-Title': 'Fat jar',
+                'Main-Class': 'de.vw.paso.login.client.Paso',
+                'SplashScreen-Image' : 'icons/application/Paso_Logo.bmp'
+        }
+    }
+}
+
+def WS_WEBAPPNAME = "PASO"
+def WS_PREP_DIR = layout.buildDirectory.dir("webstarter-prep-dir").get()
+def WS_WEBAPPS_DIR = "$WS_PREP_DIR/webApps"
+def WS_PASO_DIR = "$WS_WEBAPPS_DIR/$WS_WEBAPPNAME"
+
+tasks.register('copyDependencies', Copy) {
+    from configurations.runtimeClasspath.files, layout.buildDirectory.dir("libs").get()
+    // For some reason, Gradle is also fetching the linux jar files.
+    exclude 'javafx-*-linux.jar'
+    into "$WS_PASO_DIR/lib"
+}
+copyDependencies.mustRunAfter build
+
+tasks.register('zipWebapp', Zip) {
+    from WS_PREP_DIR
+    archiveFileName = "paso-client.zip"
+    destinationDirectory = file(layout.buildDirectory)
+}
+zipWebapp.dependsOn copyDependencies
+
+tasks.named('test') {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required.set(true)
+    }
+}

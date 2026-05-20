@@ -1,0 +1,70 @@
+plugins {
+    id 'java'
+}
+
+group 'de.vw.paso'
+version '0.0.1'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    maven {
+        url 'https://jfrog.devstack.vwgroup.com/artifactory/public/'
+        credentials {
+            username = "$artifactory_user"
+            password = "$artifactory_password"
+        }
+    }
+}
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    implementation 'com.google.guava:guava:33.4.8-jre'
+    implementation 'org.slf4j:slf4j-api:2.0.17'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
+}
+
+tasks.register('unzipTestData') {
+    def srcDir = file("${projectDir}/src/test/resources/testcases")
+    def targetDir = file("${layout.buildDirectory.get()}/resources/test")
+    def inputFiles = fileTree(dir: srcDir, include: "**/*.zip")
+
+    // specifying inputs and outputs allows gradle incremental builds
+    inputs.files inputFiles
+    outputs.dir targetDir
+
+    doLast {
+        inputFiles.each { testCase ->
+            copy {
+                println "Uncompressing test case: $testCase.name"
+                def name = testCase.name - '.zip'
+                from zipTree(testCase)
+                into "$targetDir/$name"
+            }
+        }
+    }
+}
+
+processTestResources {
+    exclude 'testcases/*.zip'
+    exclude 'testcases/*.bat'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+test.dependsOn unzipTestData
+
+jar {
+    archiveFileName = 'part-list-library.jar'
+    version = null
+}

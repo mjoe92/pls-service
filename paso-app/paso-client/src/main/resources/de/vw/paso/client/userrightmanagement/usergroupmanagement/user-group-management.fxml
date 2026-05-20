@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:id="gridPaneTab"
+          fx:controller="de.vw.paso.client.userrightmanagement.usergroupmanagement.UserGroupManagementController">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100"/>
+    </columnConstraints>
+    <SplitPane fx:id="splitPane">
+        <items>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="100"/>
+                </columnConstraints>
+                <children>
+                    <GridPane alignment="BASELINE_LEFT" hgap="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" top="5.0"/>
+                        </padding>
+                        <Label text="%search" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="searchTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                   onKeyReleased="#handleSearch"/>
+                        <Button fx:id="createUserGroup" text="%createUserGroup.text" GridPane.columnIndex="2"
+                                GridPane.rowIndex="0" onAction="#createUserGroup"/>
+                        <Button fx:id="editGroup" text="%editGroup.text" GridPane.columnIndex="3" GridPane.rowIndex="0"
+                                onAction="#editUserGroup"/>
+                        <Button fx:id="manageUsersOfGroup" text="%manageUsersOfGroup.text" GridPane.columnIndex="4"
+                                GridPane.rowIndex="0" onAction="#manageUsersOfGroup"/>
+                        <Button fx:id="manageVehicleConfigsOfGroup" text="%manageVehicleConfigsOfGroup.text"
+                                GridPane.columnIndex="5"
+                                GridPane.rowIndex="0" onAction="#manageVehicleConfigsOfGroup"/>
+                    </GridPane>
+
+                    <ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1" fitToHeight="true" fitToWidth="true"
+                                prefHeight="1280.0">
+                        <CustomTableView fx:id="tableView">
+                            <columns>
+                                <TableColumn fx:id="colBrand" text="%label.brand"/>
+                                <TableColumn fx:id="colGroupName" text="%label.groupName"/>
+                                <TableColumn fx:id="colHasWriteAccess" text="%label.hasWriteAccess"/>
+                            </columns>
+                        </CustomTableView>
+                    </ScrollPane>
+                </children>
+            </GridPane>
+
+        </items>
+    </SplitPane>
+
+</GridPane>

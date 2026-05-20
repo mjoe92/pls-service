@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.google.cloud.tools.jib' version '3.4.5'
+}
+
+repositories {
+    maven {
+        url 'https://jfrog.devstack.vwgroup.com/artifactory/public/'
+        credentials {
+            username = "$artifactory_user"
+            password = "$artifactory_password"
+        }
+    }
+}
+
+group = 'de.vw.paso'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+dependencyManagement {
+    imports {
+        mavenBom('org.springframework.boot:spring-boot-dependencies:3.5.3')
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jib {
+    from {
+        image = 'docker-public.docker.devstack.vwgroup.com/amazoncorretto@sha256:59b85fe0f2bf7311e625b6e43bf5399039e50cc3518488ee8392834969a4d24f'
+        //amazoncorretto:21-alpine3.16
+    }
+    to {
+        image = 'paso-docker.docker.devstack.vwgroup.com/apps/paso-web:' + "$docker_image_tag"
+    }
+}

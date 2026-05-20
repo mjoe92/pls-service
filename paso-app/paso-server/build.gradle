@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'com.google.cloud.tools.jib' version '3.4.5'
+}
+
+description = 'Paso Server'
+
+dependencies {
+    implementation project(':paso-share')
+
+    implementation libraries.flyway
+    implementation libraries.flywayMysql
+    implementation libraries.guava
+    implementation libraries.springDataJpa
+    implementation libraries.springWeb
+    implementation libraries.springSecurity
+    implementation libraries.springSecurityJose
+    implementation libraries.springValidation
+    implementation libraries.commonsLang3
+    implementation libraries.json
+    implementation libraries.oauth2Resource
+    implementation libraries.jwtApi
+    implementation libraries.jwtImpl
+    implementation libraries.jwtJson
+    implementation libraries.springActuator
+
+    implementation 'com.microsoft.azure:applicationinsights-runtime-attach:3.7.2'
+
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    runtimeOnly libraries.mysql
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation libraries.springTest
+    testImplementation libraries.junitJupiter
+    testRuntimeOnly libraries.junitPlatformLauncher
+}
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+
+springBoot {
+    buildInfo() {
+        properties {
+            additional = [
+                'dummy': 'example for later. do not delete',
+//                'other.property': 'different.value'
+            ]
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+    reports {
+        xml.required.set(true)
+    }
+}
+
+jib {
+    from {
+        image = 'docker-public.docker.devstack.vwgroup.com/amazoncorretto@sha256:59b85fe0f2bf7311e625b6e43bf5399039e50cc3518488ee8392834969a4d24f' //amazoncorretto:21-alpine3.16
+    }
+    to {
+        image = 'paso-docker.docker.devstack.vwgroup.com/apps/paso-server:'+"$docker_image_tag"
+    }
+    container {
+        user = '1000:1000'
+    }
+}

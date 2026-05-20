@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="de.vw.paso.client.stueckliste.FzgKonfigMainTabController"
+        fx:id="fzgConfigMainTab">
+
+    <BorderPane>
+        <top>
+            <GridPane fx:id="paneEfsHeader">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+            </GridPane>
+        </top>
+        <center>
+            <TabPane fx:id="fzgConfigTabPane">
+                <Tab fx:id="fzgConfigTab"/>
+                <Tab fx:id="partListTab"/>
+                <Tab fx:id="fgSetTab"/>
+                <Tab fx:id="costGroupTab"/>
+                <Tab fx:id="partGroupTab"/>
+            </TabPane>
+        </center>
+    </BorderPane>
+</Tab>

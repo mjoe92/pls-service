@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<Tab xmlns="http://javafx.com/javafx"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:controller="de.vw.paso.client.stueckliste.efs.PartGroupTabController"
+
+     fx:id="tabPartGroup"
+     text="%tab.title.partgroup">
+
+    <BorderPane fx:id="borderPaneTab">
+        <top>
+            <GridPane fx:id="paneEfsHeader">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+            </GridPane>
+        </top>
+
+        <center>
+            <SplitPane fx:id="splitPaneEfsInspector" orientation="HORIZONTAL" BorderPane.alignment="CENTER">
+                <SplitPane fx:id="splitPaneEfsView" orientation="VERTICAL" BorderPane.alignment="CENTER">
+                    <fx:include fx:id="partGroupTree" source="tree/part-group-tree.fxml"/>
+                </SplitPane>
+            </SplitPane>
+        </center>
+    </BorderPane>
+
+</Tab>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:id="gridPaneTab"
+          fx:controller="de.vw.paso.client.stammdaten.partgroup.PartGroupController">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints vgrow="ALWAYS"/>
+    </rowConstraints>
+
+    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <padding>
+            <Insets bottom="5.0" left="5.0" top="5.0" right="5.0"/>
+        </padding>
+        <Label text="%search"/>
+        <TextField fx:id="searchTextField" maxWidth="150.0" onKeyReleased="#handleSearch"/>
+    </HBox>
+
+    <ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1" fitToHeight="true" fitToWidth="true">
+        <CustomTreeTableView fx:id="partGroupTreeTableView" styleClass="stammdatenTreeTable">
+            <columns>
+                <TreeTableColumn fx:id="colMgr" text="%label.mgr"/>
+                <TreeTableColumn fx:id="colUgr" text="%label.ugr"/>
+                <TreeTableColumn fx:id="colDescription" text="%label.description"/>
+            </columns>
+        </CustomTreeTableView>
+    </ScrollPane>
+
+</GridPane>

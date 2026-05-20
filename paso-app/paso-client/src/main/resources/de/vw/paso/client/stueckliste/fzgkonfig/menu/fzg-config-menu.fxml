@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<GridPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.menu.FzgConfigMenuController"
+        fx:id="paneMenu"
+>
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints valignment="TOP" vgrow="SOMETIMES"/>
+        <RowConstraints valignment="BOTTOM" vgrow="NEVER"/>
+    </rowConstraints>
+    <children>
+        <ListView
+                GridPane.columnSpan="2"
+
+                fx:id="listViewFzgConfigMenu"
+                styleClass="fzg-konfig-menu-list-view"
+        />
+        <Button
+                GridPane.rowIndex="1"
+
+                maxWidth="1.7976931348623157E308"
+
+                onAction="#handleButtonPrevious"
+
+                contentDisplay="left"
+                fx:id="buttonPrevious"
+                text="%menubutton.zurueck"
+        />
+        <Button
+                GridPane.columnIndex="1" GridPane.rowIndex="1"
+
+                maxWidth="1.7976931348623157E308"
+
+                onAction="#handleButtonWeiter"
+
+                contentDisplay="right"
+                text="%menubutton.weiter"
+                fx:id="buttonWeiter"
+        />
+        <Button
+                GridPane.columnIndex="1" GridPane.rowIndex="1"
+
+                maxWidth="1.7976931348623157E308"
+
+                onAction="#handleButtonFinish"
+
+                contentDisplay="right"
+                text="%menubutton.create"
+                fx:id="buttonFinish"
+
+                visible="false"
+        />
+    </children>
+</GridPane>

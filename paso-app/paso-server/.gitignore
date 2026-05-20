@@ -1,0 +1,8 @@
+/.classpath
+/.project
+/.settings/
+/bin/
+
+!src/main/resources/*.zip
+
+src/main/resources/application-cloudidp.properties

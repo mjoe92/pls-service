@@ -1,0 +1,6 @@
+
+  / _ \  / _ |  / __/ / __ \
+ / ___/ / __ | _\ \  / /_/ /
+/_/    /_/ |_|/___/  \____/
+< PART LIST ANALYSIS ONLINE >
+${AnsiColor.GREEN}.:Using spring boot version${AnsiStyle.BOLD}${spring-boot.formatted-version} | Java Version ${java.version}

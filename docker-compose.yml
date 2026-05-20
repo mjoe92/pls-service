@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  mysql-db:
+    image: "mysql@sha256:e9fee3e714fd69cd2ccfa0c6a141fac0a60f2a02f72d43c0e7055601aaf481b0" # v8.0.28
+    restart: always
+    ports:
+      - "127.0.0.1:3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: paso
+      MYSQL_USER: paso
+      MYSQL_PASSWORD: paso
+  adminer:
+    image: "adminer@sha256:2ca89c714c8adc4fa870c08198d72f51878039e6dfe974386e0a166814a24f55" # v4.8.1-standalone
+    restart: always
+    ports:
+      - "127.0.0.1:9090:8080"
+  mongo-db:
+    image: "mongo@sha256:ebd31eaac273a9544a33387aa859b0a8676565340a40fc824fa7bda686f462f1" # v4.4.0-bionic
+    restart: always
+    ports:
+      - "127.0.0.1:27017:27017"
+  mongo-express:
+    image: "mongo-express@sha256:d5cee110909938c99cf8800b9379494c190d8fecaec70a4ce3886facdee6ef8e" # v1.0.0-alpha
+    restart: always
+    ports:
+      - "127.0.0.1:9091:8081"
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo-db:27017/

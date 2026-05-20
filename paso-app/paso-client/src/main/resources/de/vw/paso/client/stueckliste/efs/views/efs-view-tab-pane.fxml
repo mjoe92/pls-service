@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<TabPane
+        fx:id="tabPaneEfsView"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="de.vw.paso.client.stueckliste.efs.views.EfsViewTabPaneController">
+
+</TabPane>

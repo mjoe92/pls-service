@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:id="gridPaneTab"
+          fx:controller="de.vw.paso.client.userrightmanagement.usermanagement.UserManagementTabController"
+          alignment="BASELINE_LEFT">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100"/>
+    </columnConstraints>
+    <SplitPane fx:id="splitPane">
+        <items>
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="100"/>
+                </columnConstraints>
+                <children>
+                    <GridPane alignment="BASELINE_LEFT" hgap="5.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" top="5.0"/>
+                        </padding>
+                        <Label text="%search" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <TextField fx:id="searchTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                   onKeyReleased="#handleSearch"/>
+                        <Button fx:id="manageRoles" text="%manageRoles.text" GridPane.columnIndex="2"
+                                GridPane.rowIndex="0"
+                                onAction="#assignRolesToUser"/>
+                        <Button fx:id="enableDisableUserButton" text="%enableDisableUser.text" GridPane.columnIndex="3"
+                                GridPane.rowIndex="0" onAction="#enableDisableUser"/>
+                        <Button fx:id="deleteUserDataButton" text="%deleteUserData.text" GridPane.columnIndex="4"
+                                GridPane.rowIndex="0" onAction="#deleteUserData"/>
+                        <Button fx:id="resetUserButton" text="%resetUser.text" GridPane.columnIndex="5"
+                                GridPane.rowIndex="0" onAction="#resetCostCenterChangedAt"/>
+                    </GridPane>
+
+                    <ScrollPane GridPane.columnIndex="0" GridPane.rowIndex="1" fitToHeight="true" fitToWidth="true"
+                                prefHeight="1280.0">
+                        <CustomTableView fx:id="tableView">
+                            <columns>
+                                <TableColumn fx:id="colActive" text="%label.active"/>
+                                <TableColumn fx:id="colUserId" text="%label.userId"/>
+                                <TableColumn fx:id="colFirstName" text="%label.firstName"/>
+                                <TableColumn fx:id="colLastName" text="%label.lastName"/>
+                                <TableColumn fx:id="colEmail" text="%label.email"/>
+                                <TableColumn fx:id="colRoles" text="%label.roles"/>
+                                <TableColumn fx:id="colInactivityInfo" text="%label.inactivity.info"/>
+                            </columns>
+                        </CustomTableView>
+                    </ScrollPane>
+                </children>
+            </GridPane>
+
+        </items>
+    </SplitPane>
+
+</GridPane>

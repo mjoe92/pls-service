@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextField?>
+<?import de.vw.paso.client.control.textfield.PasoNumberField?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.historie.columns.EfsTreeTableColumn?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.efs.views.historie.RevisionTabController"
+        fx:id="efsRevisionTab"
+
+        text="%tab.efs.revision.title"
+>
+    <content>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="NEVER"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="NEVER"/>
+                <RowConstraints vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <Button
+                        fx:id="buttonRevert"
+                        text="%tab.history.revert"
+                        onAction="#handleRevertButtonAction"
+                >
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" top="5.0"/>
+                    </GridPane.margin>
+                </Button>
+
+                <Label
+                        GridPane.columnIndex="1"
+                        text="%tab.history.revision"
+                >
+                    <GridPane.margin>
+                        <Insets left="5.0"/>
+                    </GridPane.margin>
+                </Label>
+
+                <PasoNumberField
+                        GridPane.columnIndex="2"
+                        fx:id="numberFieldRevision"
+                        clearable="false"
+
+                        minWidth="60.0"
+                        maxWidth="60.0"
+                >
+                    <GridPane.margin>
+                        <Insets left="5.0"/>
+                    </GridPane.margin>
+                </PasoNumberField>
+
+                <Label
+                        GridPane.columnIndex="3"
+                        text="%treetablecolumn.teilenummer"
+                >
+                    <GridPane.margin>
+                        <Insets left="5.0"/>
+                    </GridPane.margin>
+                </Label>
+
+                <PasoCustomTextField fx:id="textFieldPartNumber"
+                                     GridPane.columnIndex="4"
+                                     maxTextLength="15"
+                                     upperCase="true"
+                                     clearable="false"
+
+                                     minWidth="160.0"
+                                     maxWidth="160.0"
+                                     prefWidth="160.0">
+                    <GridPane.margin>
+                        <Insets left="5.0"/>
+                    </GridPane.margin>
+                </PasoCustomTextField>
+
+                <CustomTreeTableView
+                        GridPane.rowIndex="1"
+                        GridPane.columnSpan="5"
+
+                        GridPane.hgrow="ALWAYS"
+                        GridPane.vgrow="ALWAYS"
+
+                        fx:id="efsHistoryTreeTableView"
+                        tableMenuButtonVisible="true"
+                >
+                    <columns>
+                        <EfsTreeTableColumn fx:id="revision" text="%treetablecolumn.revision" compareCell="false"/>
+                        <EfsTreeTableColumn fx:id="typeChange" text="%treetablecolumn.aenderungsart"
+                                            compareCell="false"/>
+                        <EfsTreeTableColumn fx:id="timestampChange" text="%treetablecolumn.geaendertDatum"
+                                            compareCell="false"/>
+                        <EfsTreeTableColumn fx:id="userChange" text="%treetablecolumn.geaendertVon"
+                                            compareCell="false"/>
+
+                        <EfsTreeTableColumn fx:id="partNumber" text="%treetablecolumn.teilenummer"/>
+                        <EfsTreeTableColumn fx:id="description1" text="%treetablecolumn.benennung"/>
+                        <EfsTreeTableColumn fx:id="description2" text="%treetablecolumn.zusatzbenennung"/>
+
+                        <EfsTreeTableColumn fx:id="ap" text="%treetablecolumn.ap"/>
+
+                        <EfsTreeTableColumn fx:id="setKey" text="%treetablecolumn.setkey"/>
+                        <EfsTreeTableColumn fx:id="costGroup" text="%treetablecolumn.costgroup"/>
+
+                        <EfsTreeTableColumn fx:id="quantity" text="%treetablecolumn.menge"/>
+                        <EfsTreeTableColumn fx:id="quantityUnit" text="%treetablecolumn.einheit"/>
+
+                        <EfsTreeTableColumn fx:id="weightControlFlag" text="%treetablecolumn.gws"/>
+
+                        <EfsTreeTableColumn fx:id="weightAll" text="%treetablecolumn.gewichtgesamt"/>
+                        <EfsTreeTableColumn fx:id="weightPrio" text="%treetablecolumn.gewichtprio"/>
+
+                        <EfsTreeTableColumn fx:id="weightWeightedTe" text="%treetablecolumn.konstgewogen"/>
+                        <EfsTreeTableColumn fx:id="weightCalculatedTe" text="%treetablecolumn.konsterrechnet"/>
+                        <EfsTreeTableColumn fx:id="weightEstimatedTe" text="%treetablecolumn.konstgeschaetzt"/>
+                        <EfsTreeTableColumn fx:id="weightWeightedProd" text="%treetablecolumn.prodgewogen"/>
+
+                        <EfsTreeTableColumn fx:id="beginDateKey" text="%treetablecolumn.einsatzschluessel"/>
+                        <EfsTreeTableColumn fx:id="drawingDate" text="%treetablecolumn.zeichnungdatum"/>
+                        <EfsTreeTableColumn fx:id="drawingStatus" text="%treetablecolumn.zeichnungstand"/>
+
+                        <EfsTreeTableColumn fx:id="beginDate" text="%treetablecolumn.einsatzserie"/>
+                        <EfsTreeTableColumn fx:id="endDateKey" text="%treetablecolumn.entfallschluessel"/>
+
+                        <EfsTreeTableColumn fx:id="endDate" text="%treetablecolumn.entfallserie"/>
+
+                        <EfsTreeTableColumn fx:id="cog" text="%treetablecolumn.cog"/>
+
+                        <EfsTreeTableColumn fx:id="prNumberRule" text="%treetablecolumn.prnummern"/>
+
+                        <EfsTreeTableColumn fx:id="tisSort" text="%treetablecolumn.sortierung"/>
+                    </columns>
+                </CustomTreeTableView>
+            </children>
+        </GridPane>
+    </content>
+</Tab>

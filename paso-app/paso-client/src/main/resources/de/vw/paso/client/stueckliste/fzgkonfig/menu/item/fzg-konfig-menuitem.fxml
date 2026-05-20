@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+
+      fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.menu.item.FzgKonfigMenuItemController"
+      fx:id="paneFzgKonfigMenu" spacing="5">
+    <children>
+        <HBox spacing="5">
+            <children>
+                <Label
+                        fx:id="labelIndex"
+                        styleClass="label-menu-text">
+                </Label>
+
+                <Label
+                        fx:id="labelName"
+                        styleClass="label-menu-text">
+                </Label>
+
+                <ImageView
+                        fx:id="statusIcon">
+                </ImageView>
+            </children>
+        </HBox>
+
+        <Label
+                fx:id="labelInfoText"
+                wrapText="true"
+                styleClass="label-menu-text">
+        </Label>
+    </children>
+</VBox>

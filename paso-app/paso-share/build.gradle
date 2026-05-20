@@ -1,0 +1,33 @@
+plugins {
+	id 'java'
+}
+
+description = 'Paso Share'
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+
+dependencies {
+    implementation libraries.guava
+    implementation libraries.commonsLang3
+    implementation libraries.jakartaPersistence
+    implementation libraries.jacksonAnnotation
+    implementation libraries.slf4j
+
+    compileOnly libraries.lombok
+    annotationProcessor libraries.lombok
+
+    testImplementation libraries.springTest
+    testImplementation libraries.junitJupiter
+    testRuntimeOnly libraries.junitPlatformLauncher
+}
+
+jar {
+	archiveFileName = 'paso-share.jar'
+    archiveVersion = null
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

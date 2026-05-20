@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextFieldClearable?>
+<Tab xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+     fx:id="userRightManagementTab" text="%user.right.management"
+     fx:controller="de.vw.paso.client.userrightmanagement.UserRightManagementTabController">
+    <SplitPane fx:id="splitPane" dividerPositions="0.2">
+        <items>
+            <VBox spacing="5">
+                <children>
+                    <HBox spacing="5.0" alignment="CENTER_LEFT">
+                        <children>
+                            <Label text="%search"/>
+                            <PasoCustomTextFieldClearable fx:id="searchTxt"/>
+                        </children>
+                        <padding>
+                            <Insets left="5" top="5"></Insets>
+                        </padding>
+                    </HBox>
+                    <ScrollPane VBox.vgrow="ALWAYS"
+                                fitToHeight="true"
+                                fitToWidth="true">
+                        <content>
+                            <ListView fx:id="treeViewUserRight"/>
+                        </content>
+                    </ScrollPane>
+                </children>
+            </VBox>
+            <BorderPane fx:id="userRightBorderPane"/>
+        </items>
+    </SplitPane>
+</Tab>

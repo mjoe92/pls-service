@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunPasoServerLocal" type="Application" factoryName="Application">
+    <envs>
+      <env name="SPRING_PROFILES_ACTIVE" value="local,cloudidp" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="de.vw.paso.Application" />
+    <module name="paso-app.paso-server.main" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/paso-app/paso-server" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="clean build" externalProjectPath="$PROJECT_DIR$/paso-app/paso-server" vmOptions="" scriptParameters="-x test" />
+    </method>
+  </configuration>
+</component>

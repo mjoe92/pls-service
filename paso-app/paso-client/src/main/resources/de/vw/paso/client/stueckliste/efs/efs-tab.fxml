@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="de.vw.paso.client.stueckliste.efs.EfsTabController"
+        fx:id="tabEfs"
+        text="%tab.title.stueckliste">
+
+    <BorderPane fx:id="borderPaneTab">
+        <center>
+            <SplitPane fx:id="splitPaneEfsProperties" orientation="HORIZONTAL" BorderPane.alignment="CENTER">
+                <items>
+                    <SplitPane fx:id="splitPaneEfsView" orientation="VERTICAL" BorderPane.alignment="CENTER">
+                        <items>
+                            <fx:include fx:id="efsTree" source="tree/efs-tree.fxml"/>
+                        </items>
+                    </SplitPane>
+                </items>
+            </SplitPane>
+        </center>
+        <bottom>
+        </bottom>
+    </BorderPane>
+</Tab>

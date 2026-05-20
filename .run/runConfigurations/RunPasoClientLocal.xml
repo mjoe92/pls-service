@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunPasoClientLocal" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="de.vw.paso.login.client.Paso" />
+    <module name="paso-app.paso-client.main" />
+    <option name="PROGRAM_PARAMETERS" value="-stage local" />
+    <option name="VM_PARAMETERS" value="-Dwebstarter.url=https://e2ewebstarter-test.wob.vw.vwg/paso/test/webApps/PASO/_conf/_DpWS/_webStarter2.htm -Duser.language=EN" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/paso-app/paso-client" />
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="true" tasks="clean build" externalProjectPath="$PROJECT_DIR$/paso-app/paso-client" vmOptions="" scriptParameters="-x test" />
+    </method>
+  </configuration>
+</component>

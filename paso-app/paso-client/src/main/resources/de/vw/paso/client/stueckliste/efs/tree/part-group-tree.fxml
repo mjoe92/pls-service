@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.historie.columns.EfsTreeTableColumn?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.vw.paso.client.stueckliste.efs.tree.SingleVehiclePartGroupController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <center>
+        <CustomTreeTableView fx:id="partGroupTreeTableView" tableMenuButtonVisible="true">
+            <columns>
+                <EfsTreeTableColumn fx:id="colPartGroup" text="%treetablecolumn.partGroup"/>
+                <EfsTreeTableColumn fx:id="colDescription" text="%treetablecolumn.description"/>
+                <EfsTreeTableColumn fx:id="colPlatform" text="%treetablecolumn.platform"/>
+                <EfsTreeTableColumn fx:id="colSystem" text="%treetablecolumn.system"/>
+                <EfsTreeTableColumn fx:id="colHut" text="%treetablecolumn.hut"/>
+                <EfsTreeTableColumn fx:id="colWeightAll" text="%treetablecolumn.weightall"/>
+            </columns>
+        </CustomTreeTableView>
+    </center>
+
+</BorderPane>

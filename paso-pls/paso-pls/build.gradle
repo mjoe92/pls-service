@@ -1,0 +1,73 @@
+plugins {
+	id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.google.cloud.tools.jib' version '3.4.5'
+}
+
+group = 'de.vw.paso'
+
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
+
+repositories {
+    maven {
+        url 'https://jfrog.devstack.vwgroup.com/artifactory/public/'
+        credentials {
+            username = "$artifactory_user"
+            password = "$artifactory_password"
+        }
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom('org.springframework.boot:spring-boot-dependencies:3.5.3')
+    }
+}
+
+dependencies {
+    implementation project(':part-list-library')
+
+    implementation 'commons-io:commons-io:2.19.0'
+    implementation 'org.apache.commons:commons-lang3:3.17.0'
+    implementation 'com.google.guava:guava:33.4.8-jre'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.github.mwiede:jsch:2.27.0'
+    implementation 'com.azure:azure-storage-blob:12.30.1'
+    implementation 'com.azure:azure-identity:1.16.2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:4.20.0'
+    testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo.spring3x:4.20.0'
+}
+
+configurations.configureEach {
+    exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+}
+
+test {
+    systemProperties(System.getProperties())
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+jib {
+    from {
+        image = 'docker-public.docker.devstack.vwgroup.com/amazoncorretto@sha256:59b85fe0f2bf7311e625b6e43bf5399039e50cc3518488ee8392834969a4d24f' //amazoncorretto:21-alpine3.16
+    }
+    to {
+        image = 'paso-docker.docker.devstack.vwgroup.com/apps/paso-pls:'+"$docker_image_tag"
+    }
+}

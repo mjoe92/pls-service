@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.stueckliste.efs.control.AggregateImageTextFieldControl?>
+<?import de.vw.paso.client.stueckliste.efs.control.AggregatTextFieldControl?>
+<GridPane
+        fx:id="paneEfsHeader"
+
+        maxHeight="103.0"
+        maxWidth="1.7976931348623157E308"
+        minHeight="100.0"
+        minWidth="400.0"
+        prefHeight="100.0"
+        prefWidth="1280.0"
+
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        styleClass="pane-efs-header-engine-gearbox"
+
+        fx:controller="de.vw.paso.client.stueckliste.efs.header.EfsHeaderEngineAndGearboxController">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0"/>
+
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="125.0" prefWidth="125.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0"/>
+
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="120.0"/>
+
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0"/>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0"/>
+
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="21.0" minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="21.0" minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="21.0" minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
+    </rowConstraints>
+
+    <children>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%label.header.fahrzeug"
+               GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1"
+               styleClass="label-efs-header-group"/>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%label.header.modell"
+               GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1"
+               styleClass="label-efs-header-group"/>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%label.header.stueckliste"
+               GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.rowIndex="1"
+               styleClass="label-efs-header-group"/>
+        <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="%label.header.datenstand"
+               GridPane.columnIndex="10" GridPane.columnSpan="2" GridPane.rowIndex="1"
+               styleClass="label-efs-header-group"/>
+
+        <Label text="%label.fahrzeug.projekt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="%label.fahrzeug.konfiguration" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="%label.fahrzeug.gueltigkeit" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="%label.modell.meta" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+        <Label text="%label.modell.bezeichnung" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+        <Label text="%label.modell.einsatz" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+
+        <Label text="%label.stueckliste.motor.getriebe" GridPane.columnIndex="7" GridPane.rowIndex="2"/>
+        <Label text="%label.stueckliste.gewicht" GridPane.columnIndex="7" GridPane.rowIndex="3"/>
+        <Label text="%label.stueckliste.positions" GridPane.columnIndex="7" GridPane.rowIndex="4"/>
+
+        <Label text="%label.datenstand.erstellt" GridPane.columnIndex="10" GridPane.rowIndex="2"/>
+        <Label text="%label.datenstand.geaendert" GridPane.columnIndex="10" GridPane.rowIndex="3"/>
+        <Label text="%label.datenstand.status" GridPane.columnIndex="10" GridPane.rowIndex="4"/>
+
+        <TextField fx:id="textFieldFzgProject" editable="false" maxHeight="21.0" maxWidth="1.7976931348623157E308"
+                   minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="2" GridPane.rowIndex="2"
+                   styleClass="text-field-efs-header"/>
+        <TextField fx:id="textFieldFzgConfig" editable="false" maxHeight="21.0" maxWidth="1.7976931348623157E308"
+                   minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="2" GridPane.rowIndex="3"
+                   styleClass="text-field-efs-header"/>
+        <TextField fx:id="textFieldFzgStartDate" editable="false" maxHeight="21.0" maxWidth="1.7976931348623157E308"
+                   minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="2" GridPane.rowIndex="4"
+                   styleClass="text-field-efs-header"/>
+
+        <GridPane maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="20.0"
+                  GridPane.columnIndex="5" GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"
+                                   maxWidth="1.7976931348623157E308"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"
+                                   maxWidth="1.7976931348623157E308"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"
+                                   maxWidth="1.7976931348623157E308"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TextField fx:id="textFieldModelKey" editable="false" maxHeight="21.0" maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="0"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="2.0"/>
+                    </GridPane.margin>
+                </TextField>
+
+                <TextField fx:id="textFieldModelLand" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="1"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="2.0"/>
+                    </GridPane.margin>
+                </TextField>
+
+                <TextField fx:id="textFieldModelYear" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="2"
+                           styleClass="text-field-efs-header"/>
+            </children>
+        </GridPane>
+
+
+        <TextField fx:id="textFieldModelDescription" editable="false" maxHeight="21.0"
+                   maxWidth="1.7976931348623157E308"
+                   minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="5" GridPane.rowIndex="3"
+                   styleClass="text-field-efs-header"/>
+
+        <GridPane GridPane.columnIndex="5" GridPane.rowIndex="4" maxHeight="20.0" maxWidth="1.7976931348623157E308"
+                  minHeight="20.0" prefHeight="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TextField fx:id="textFieldModelStartDate" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="0"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="textFieldModelEndDate" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="1"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="8" GridPane.rowIndex="2" maxHeight="20.0" maxWidth="1.7976931348623157E308"
+                  minHeight="20.0" prefHeight="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <AggregatTextFieldControl fx:id="textFieldMotor" editable="false" onAction="#handleActionShowAggregat"
+                                          maxHeight="21.0" maxWidth="1.7976931348623157E308" minHeight="21.0"
+                                          prefHeight="21.0"
+                                          GridPane.columnIndex="0">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </AggregatTextFieldControl>
+                <AggregatTextFieldControl fx:id="textFieldGearbox" editable="false"
+                                          onAction="#handleActionShowAggregat"
+                                          maxHeight="21.0" maxWidth="1.7976931348623157E308" minHeight="21.0"
+                                          prefHeight="21.0"
+                                          GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </AggregatTextFieldControl>
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="8" GridPane.rowIndex="3" maxHeight="20.0" maxWidth="1.7976931348623157E308"
+                  minHeight="20.0" prefHeight="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="110.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <AggregateImageTextFieldControl fx:id="textWeightSelected" editable="false" maxHeight="21.0"
+                                                minHeight="21.0" prefHeight="21.0"
+                                                GridPane.columnIndex="0" styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+                <AggregateImageTextFieldControl fx:id="textWeightFiltered" editable="false" maxHeight="21.0"
+                                                minHeight="21.0"
+                                                prefHeight="21.0" GridPane.columnIndex="1"
+                                                styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+                <AggregateImageTextFieldControl fx:id="textWeightAll" editable="false" maxHeight="21.0" minHeight="21.0"
+                                                prefHeight="21.0"
+                                                GridPane.columnIndex="2" styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="8" GridPane.rowIndex="4" maxHeight="20.0" maxWidth="1.7976931348623157E308"
+                  minHeight="20.0" prefHeight="20.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="110.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <AggregateImageTextFieldControl fx:id="textSelectedPositions" editable="false" maxHeight="21.0"
+                                                maxWidth="1.7976931348623157E308"
+                                                minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="0"
+                                                styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+                <AggregateImageTextFieldControl fx:id="textFilteredPositions" editable="false" maxHeight="21.0"
+                                                maxWidth="1.7976931348623157E308" minHeight="21.0" prefHeight="21.0"
+                                                GridPane.columnIndex="1" styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+                <AggregateImageTextFieldControl fx:id="textPositions" editable="false" maxHeight="21.0"
+                                                maxWidth="1.7976931348623157E308"
+                                                minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="2"
+                                                styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </AggregateImageTextFieldControl>
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="11" GridPane.rowIndex="2">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TextField fx:id="textFieldTimestampCreated" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="0"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="textFieldUserCreated" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="1"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+            </children>
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="11" GridPane.rowIndex="3">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0"
+                                   prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="21.0" prefHeight="21.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <TextField fx:id="textFieldTimestampChanged" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="0"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets right="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="textFieldUserChanged" editable="false" maxHeight="21.0"
+                           maxWidth="1.7976931348623157E308"
+                           minHeight="21.0" prefHeight="21.0" GridPane.columnIndex="1"
+                           styleClass="text-field-efs-header">
+                    <GridPane.margin>
+                        <Insets left="1.0"/>
+                    </GridPane.margin>
+                </TextField>
+            </children>
+        </GridPane>
+
+
+        <TextField fx:id="textFieldStatus" editable="false" maxHeight="21.0" minHeight="21.0" prefHeight="21.0"
+                   GridPane.columnIndex="11" GridPane.rowIndex="4" styleClass="text-field-efs-header"/>
+    </children>
+</GridPane>

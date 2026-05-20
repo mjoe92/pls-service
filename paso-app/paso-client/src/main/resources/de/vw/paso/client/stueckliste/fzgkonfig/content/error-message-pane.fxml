@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.content.ErrorMessagePaneController"
+        fx:id="errorMessagePane"
+        styleClass="errormessage-pane">
+    <children>
+        <Label
+                fx:id="message">
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+        </Label>
+    </children>
+</StackPane>

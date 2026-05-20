@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<GridPane fx:id="gridPaneTab" xmlns="http://javafx.com/javafx/23.0.2" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="de.vw.paso.client.stammdaten.vertriebsregion.SalesRegionsController">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS"/>
+    </columnConstraints>
+
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints vgrow="ALWAYS"/>
+    </rowConstraints>
+
+    <HBox alignment="CENTER_LEFT" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+        <Label text="%search"/>
+        <TextField fx:id="searchTextField" onKeyReleased="#handleSearch"/>
+        <Button fx:id="toggleRelevance" onAction="#toggleRelevanceState" text="%region.toggleRelevance"/>
+    </HBox>
+
+    <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <CustomTableView fx:id="productTableView">
+            <columns>
+                <TableColumn fx:id="colSalesRegion" text="%tablecolumn.key"/>
+                <TableColumn fx:id="colDescriptionDe" text="%tablecolumn.description.de"/>
+                <TableColumn fx:id="colDescriptionEn" text="%tablecolumn.description.en"/>
+                <TableColumn fx:id="colRelevant" text="%tablecolumn.relevant"/>
+            </columns>
+        </CustomTableView>
+    </ScrollPane>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+</GridPane>

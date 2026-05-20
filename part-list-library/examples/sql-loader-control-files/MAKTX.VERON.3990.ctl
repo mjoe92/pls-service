@@ -1,0 +1,18 @@
+OPTIONS (SKIP=1, ERRORS=1000000000)
+LOAD DATA
+APPEND
+INTO TABLE TI_WH_MAKTX
+(
+  TI_WH_MAKTX_ID     "SEQ_TI_WH_MAKTX.NEXTVAL",
+  TI_WH_IMPORT_ID    "3990",
+  IMPORT_DATE        "CURRENT_TIMESTAMP",
+  
+  TEILENUMMER        position(1:18)  CHAR(18),
+  TNR_VORNUMMER      position(1:3)   CHAR(3),
+  TNR_MITTELGRUPPE   position(4:6)   CHAR(3),
+  TNR_ENDNUMMER      position(7:9)   CHAR(3),
+  TNR_INDEX          position(10:11) CHAR(2),
+  SPRACHE            position(19:19) CHAR(1),
+  BEZEICHNUNG        position(20:59) CHAR(40)
+  
+)

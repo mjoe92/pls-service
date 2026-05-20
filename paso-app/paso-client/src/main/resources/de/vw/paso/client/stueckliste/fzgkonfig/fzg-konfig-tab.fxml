@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.FzgConfigTabController"
+        fx:id="tabFzgConfig">
+    <content>
+        <BorderPane
+                fx:id="mainPane">
+            <top>
+                <StackPane
+                        BorderPane.alignment="CENTER"
+                        styleClass="fzg-config-header">
+                    <children>
+                        <Label text="%fzgkonfig.erstellen"/>
+                    </children>
+                </StackPane>
+            </top>
+            <center>
+                <SplitPane styleClass="fzg-konfig-split-pane"
+                           dividerPositions="0.2">
+                    <items>
+                        <fx:include fx:id="fzgConfigMenu" source="menu/fzg-config-menu.fxml"/>
+                        <ScrollPane fitToHeight="true" fitToWidth="true">
+                            <StackPane
+                                    fx:id="contentPane" styleClass="fzg-konfig-content-pane"
+                            />
+                        </ScrollPane>
+                    </items>
+                </SplitPane>
+            </center>
+        </BorderPane>
+    </content>
+</Tab>

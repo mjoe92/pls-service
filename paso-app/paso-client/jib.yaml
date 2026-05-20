@@ -1,0 +1,26 @@
+apiVersion: jib/v1alpha1
+kind: BuildFile
+
+from:
+  image: "paso-docker.docker.devstack.vwgroup.com/nginx:1.24.0-bullseye"
+  platforms:
+    - architecture: "amd64"
+      os: "linux"
+
+format: Docker
+
+exposedPorts:
+  - "80"
+
+layers:
+  properties:
+    filePermissions: "644"
+    directoryPermissions: "755"
+    user: "0"
+    group: "0"
+    timestamp: "3000"
+  entries:
+    - name: webstarter
+      files:
+        - src: "build/webstarter-prep-dir/deploy"
+          dest: "/usr/share/nginx/html"

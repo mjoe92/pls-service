@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.summarised.SummarizedTableColumn?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.vw.paso.client.stueckliste.efs.views.summarised.FgSetCompareSummarisedTabController"
+            fx:id="sumCompareBorderPane">
+
+    <top>
+        <HBox>
+            <Label fx:id="label" prefWidth="330" prefHeight="30"/>
+        </HBox>
+    </top>
+
+    <center>
+        <CustomTableView fx:id="sumCompareTableView">
+            <columns>
+                <SummarizedTableColumn fx:id="colPartNumber" text="%tablecolumn.partNumber"/>
+                <SummarizedTableColumn fx:id="colDescription" text="%tablecolumn.description"/>
+                <SummarizedTableColumn fx:id="colDescription2" text="%tablecolumn.description2"/>
+                <SummarizedTableColumn fx:id="colAP" text="%tablecolumn.ap"/>
+                <SummarizedTableColumn fx:id="colSetKey" text="%tablecolumn.setKey"/>
+                <SummarizedTableColumn fx:id="colCostGroup" text="%tablecolumn.costGroup"/>
+                <SummarizedTableColumn fx:id="colChangeState" text="%tablecolumn.changeState"/>
+                <SummarizedTableColumn fx:id="colDeltaWeight" text="%tablecolumn.deltaWeight"/>
+            </columns>
+        </CustomTableView>
+    </center>
+
+</BorderPane>

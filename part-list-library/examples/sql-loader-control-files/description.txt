@@ -1,0 +1,8 @@
+Control files used by system VERON.
+
+VERON uses Oracle SQL*Loader for parsing the TI-WH input files and pushing the data 
+into the VERON oracle database. Control files are generated prior to loading 
+specifically for that import. 
+
+Columns, files and format are expected to be the same for PASO. So the control files
+can act as column specification reference. Take care, indexing is different to java! 

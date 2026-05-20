@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextField?>
+<?import de.vw.paso.client.control.textfield.PasoCustomTextFieldClearable?>
+<?import de.vw.paso.client.stueckliste.fzgkonfig.content.stueckliste.StuecklisteControl?>
+<BorderPane
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.fzgkonfig.content.fzgprojekt.FzgProjektController"
+        fx:id="contentPane">
+    <top>
+        <fx:include fx:id="errorMessagePane" source="../error-message-pane.fxml"/>
+    </top>
+
+    <center>
+        <VBox spacing="5">
+            <padding>
+                <Insets topRightBottomLeft="5"/>
+            </padding>
+            <children>
+                <CheckBox
+                        selected="true"
+                        text="%erstellung.auto"
+                        fx:id="checkBoxErstellungAuto">
+                </CheckBox>
+
+                <HBox spacing="5" alignment="CENTER_LEFT">
+                    <Label
+                            text="%brand.colon">
+                    </Label>
+
+                    <ComboBox
+                            maxWidth="150.0"
+                            fx:id="brandsBox">
+                    </ComboBox>
+
+                    <Label
+                            text="%search.colon">
+                    </Label>
+                    <PasoCustomTextFieldClearable
+                            maxWidth="150.0"
+                            maxTextLength="12"
+
+                            fx:id="textfieldSuche">
+                    </PasoCustomTextFieldClearable>
+
+                    <Label text="%vehicleconfig.wizard.rights.usergroup.label">
+                    </Label>
+                    <ComboBox maxWidth="150.0" fx:id="userGroupsBox">
+                    </ComboBox>
+
+                    <Label text="%valid.date" GridPane.rowIndex="1">
+                    </Label>
+
+                    <DatePicker fx:id="datePickerValidDate" GridPane.rowIndex="1" minWidth="100.0" maxWidth="150.0">
+                    </DatePicker>
+
+                    <Label text="%bezeichnung">
+                    </Label>
+                    <PasoCustomTextField fx:id="textFieldName" minWidth="100.0" maxWidth="150.0">
+                    </PasoCustomTextField>
+                </HBox>
+
+                <HBox spacing="5">
+                    <CustomTableView
+                            fx:id="fzgProjektTableView" HBox.hgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colRadio" text="%tablecolumn.radio"/>
+                            <TableColumn fx:id="colVehicleProject" text="%tablecolumn.vehicleproject"/>
+                            <TableColumn fx:id="colProjectDescription" text="%tablecolumn.description"/>
+                            <TableColumn fx:id="colProductKey" text="%tablecolumn.productKey"/>
+                            <TableColumn fx:id="colSaleskey" text="%tablecolumn.saleskey"/>
+                            <TableColumn fx:id="colFirstModelYear" text="%tablecolumn.firstmodelyear"/>
+                            <TableColumn fx:id="colPlatformID" text="%tablecolumn.platform"/>
+                        </columns>
+                    </CustomTableView>
+                    <VBox spacing="5">
+                        <Label text="%beschreibung">
+                        </Label>
+
+                        <TextArea fx:id="textAreaDescription" maxWidth="250" VBox.vgrow="ALWAYS">
+                        </TextArea>
+                    </VBox>
+                </HBox>
+
+                <Separator>
+                </Separator>
+
+                <StuecklisteControl fx:id="stuecklisteFahrzeug" description="%produktschluessel.fzg">
+                </StuecklisteControl>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

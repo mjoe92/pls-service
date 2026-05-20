@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import de.vw.paso.client.control.treetable.CustomTreeTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.historie.columns.EfsTreeTableColumn?>
+<Tab
+        xmlns="http://javafx.com/javafx/8"
+        xmlns:fx="http://javafx.com/fxml/1"
+
+        fx:controller="de.vw.paso.client.stueckliste.efs.views.historie.HistoryTabController"
+        fx:id="efsHistoryTab"
+
+        text="%tab.efs.history.title"
+>
+    <content>
+        <CustomTreeTableView
+                tableMenuButtonVisible="true"
+                fx:id="efsHistoryTreeTableView"
+        >
+            <columns>
+                <EfsTreeTableColumn fx:id="revision" text="%treetablecolumn.revision" compareCell="false"/>
+                <EfsTreeTableColumn fx:id="typeChange" text="%treetablecolumn.aenderungsart" compareCell="false"/>
+                <EfsTreeTableColumn fx:id="timestampChange" text="%treetablecolumn.geaendertDatum" compareCell="false"/>
+                <EfsTreeTableColumn fx:id="userChange" text="%treetablecolumn.geaendertVon" compareCell="false"/>
+
+                <EfsTreeTableColumn fx:id="partNumber" text="%treetablecolumn.teilenummer"/>
+                <EfsTreeTableColumn fx:id="description1" text="%treetablecolumn.benennung"/>
+                <EfsTreeTableColumn fx:id="description2" text="%treetablecolumn.zusatzbenennung"/>
+
+                <EfsTreeTableColumn fx:id="ap" text="%treetablecolumn.ap"/>
+
+                <EfsTreeTableColumn fx:id="setKey" text="%treetablecolumn.setkey"/>
+                <EfsTreeTableColumn fx:id="costGroup" text="%treetablecolumn.costgroup"/>
+
+                <EfsTreeTableColumn fx:id="quantity" text="%treetablecolumn.menge"/>
+                <EfsTreeTableColumn fx:id="quantityUnit" text="%treetablecolumn.einheit"/>
+
+                <EfsTreeTableColumn fx:id="weightControlFlag" text="%treetablecolumn.gws"/>
+
+                <EfsTreeTableColumn fx:id="weightAll" text="%treetablecolumn.gewichtgesamt"/>
+                <EfsTreeTableColumn fx:id="weightPrio" text="%treetablecolumn.gewichtprio"/>
+
+                <EfsTreeTableColumn fx:id="weightWeightedTe" text="%treetablecolumn.konstgewogen"/>
+                <EfsTreeTableColumn fx:id="weightCalculatedTe" text="%treetablecolumn.konsterrechnet"/>
+                <EfsTreeTableColumn fx:id="weightEstimatedTe" text="%treetablecolumn.konstgeschaetzt"/>
+                <EfsTreeTableColumn fx:id="weightWeightedProd" text="%treetablecolumn.prodgewogen"/>
+
+                <EfsTreeTableColumn fx:id="beginDateKey" text="%treetablecolumn.einsatzschluessel"/>
+                <EfsTreeTableColumn fx:id="drawingDate" text="%treetablecolumn.zeichnungdatum"/>
+                <EfsTreeTableColumn fx:id="drawingStatus" text="%treetablecolumn.zeichnungstand"/>
+
+                <EfsTreeTableColumn fx:id="beginDate" text="%treetablecolumn.einsatzserie"/>
+                <EfsTreeTableColumn fx:id="endDateKey" text="%treetablecolumn.entfallschluessel"/>
+
+                <EfsTreeTableColumn fx:id="endDate" text="%treetablecolumn.entfallserie"/>
+
+                <EfsTreeTableColumn fx:id="cog" text="%treetablecolumn.cog"/>
+
+                <EfsTreeTableColumn fx:id="prNumberRule" text="%treetablecolumn.prnummern"/>
+
+                <EfsTreeTableColumn fx:id="tisSort" text="%treetablecolumn.sortierung"/>
+            </columns>
+        </CustomTreeTableView>
+    </content>
+</Tab>

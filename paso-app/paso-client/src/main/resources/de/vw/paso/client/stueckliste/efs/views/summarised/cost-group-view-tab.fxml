@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import de.vw.paso.client.control.breadcrumb.PasoBreadCrumbBar?>
+<?import de.vw.paso.client.control.table.CustomTableView?>
+<?import de.vw.paso.client.stueckliste.efs.views.summarised.SummarizedTableColumn?>
+<BorderPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="de.vw.paso.client.stueckliste.efs.views.summarised.CostGroupSummarisedTabController"
+        fx:id="borderPaneTab">
+
+
+    <top>
+        <HBox>
+            <Label fx:id="label" prefWidth="300" prefHeight="30"/>
+            <PasoBreadCrumbBar fx:id="breadCrumbBar"/>
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <Button fx:id="clearFilterAndSelect" text="%clearfilter.select"
+                onAction="#clearFilterAndSelectEfsElement"/>
+
+        <CustomTableView fx:id="tableView" tableMenuButtonVisible="true">
+            <columns>
+                <SummarizedTableColumn fx:id="colPartNumber" text="%treetablecolumn.teilenummer"/>
+                <SummarizedTableColumn fx:id="colPartNumberVornummer" text="%treetablecolumn.teilenummer.vornummer"/>
+                <SummarizedTableColumn fx:id="colPartNumberMittelgruppe"
+                                       text="%treetablecolumn.teilenummer.mittelgruppe"/>
+                <SummarizedTableColumn fx:id="colPartNumberEndNumber" text="%treetablecolumn.teilenummer.endnumber"/>
+                <SummarizedTableColumn fx:id="colPartNumberIndex" text="%treetablecolumn.teilenummer.index"/>
+                <SummarizedTableColumn fx:id="colDescription1" text="%treetablecolumn.benennung"/>
+                <SummarizedTableColumn fx:id="colDescription2" text="%treetablecolumn.zusatzbenennung"/>
+                <SummarizedTableColumn fx:id="colBomNumber" text="%treetablecolumn.bomnumber"/>
+                <SummarizedTableColumn fx:id="colProduct" text="%treetablecolumn.product"/>
+                <SummarizedTableColumn fx:id="colPartType" text="%treetablecolumn.parttype"/>
+
+                <SummarizedTableColumn fx:id="colNodeId" text="%treetablecolumn.nodeId"/>
+                <SummarizedTableColumn fx:id="colNodeLabel" text="%treetablecolumn.nodeLabel"/>
+                <SummarizedTableColumn fx:id="colNodeValueParent" text="%treetablecolumn.nodeValueParent"/>
+                <SummarizedTableColumn fx:id="colNodeValue" text="%treetablecolumn.nodeValue"/>
+                <SummarizedTableColumn fx:id="colNodeLevel" text="%treetablecolumn.nodeLevel"/>
+                <SummarizedTableColumn fx:id="colNodeType" text="%treetablecolumn.nodeType"/>
+
+                <SummarizedTableColumn fx:id="colAp" text="%treetablecolumn.ap"/>
+                <SummarizedTableColumn fx:id="colSetKey" text="%treetablecolumn.setkey"/>
+                <SummarizedTableColumn fx:id="colCostGroup" text="%treetablecolumn.costgroup"/>
+                <SummarizedTableColumn fx:id="colConstructionsGroup" text="%treetablecolumn.constructionsGroup"/>
+                <SummarizedTableColumn fx:id="colProductStructure" text="%treetablecolumn.productStructure"/>
+
+                <SummarizedTableColumn fx:id="colPositionVariant" text="%treetablecolumn.positionVariant"/>
+                <SummarizedTableColumn fx:id="colDeletionFlag" text="%treetablecolumn.deletionFlag"/>
+
+                <SummarizedTableColumn fx:id="colQuantity" text="%treetablecolumn.menge"/>
+                <SummarizedTableColumn fx:id="colQuantityUnit" text="%treetablecolumn.einheit"/>
+                <SummarizedTableColumn fx:id="colQuantityUnitExtended" text="%treetablecolumn.einheitErweitert"/>
+
+                <SummarizedTableColumn fx:id="colWeightControlFlag" text="%treetablecolumn.gws"/>
+
+                <SummarizedTableColumn fx:id="colWeightAll" text="%treetablecolumn.gewichtgesamt"/>
+                <SummarizedTableColumn fx:id="colWeightPrio" text="%treetablecolumn.gewichtprio"/>
+
+                <SummarizedTableColumn fx:id="colWeightWeightedTe" text="%treetablecolumn.konstgewogen"/>
+                <SummarizedTableColumn fx:id="colWeightWeightedTeDate" text="%treetablecolumn.konstgewogendate"/>
+                <SummarizedTableColumn fx:id="colWeightCalculatedTe"
+                                       text="%treetablecolumn.konsterrechnet"/>
+                <SummarizedTableColumn fx:id="colWeightCalculatedTeDate"
+                                       text="%treetablecolumn.konsterrechnetdate"/>
+                <SummarizedTableColumn fx:id="colWeightEstimatedTe"
+                                       text="%treetablecolumn.konstgeschaetzt"/>
+                <SummarizedTableColumn fx:id="colWeightEstimatedTeDate"
+                                       text="%treetablecolumn.konstgeschaetztdate"/>
+                <SummarizedTableColumn fx:id="colWeightWeightedProd" text="%treetablecolumn.prodgewogen"/>
+                <SummarizedTableColumn fx:id="colWeightWeightedProdDate" text="%treetablecolumn.prodgewogendate"/>
+
+                <SummarizedTableColumn fx:id="colBeginDateKey"
+                                       text="%treetablecolumn.einsatzschluessel"/>
+                <SummarizedTableColumn fx:id="colDrawingDate" text="%treetablecolumn.zeichnungdatum"/>
+                <SummarizedTableColumn fx:id="colDrawingStatus" text="%treetablecolumn.zeichnungstand"/>
+
+                <SummarizedTableColumn fx:id="colBeginDate" text="%treetablecolumn.einsatzserie"/>
+                <SummarizedTableColumn fx:id="colEndDateKey"
+                                       text="%treetablecolumn.entfallschluessel"/>
+
+                <SummarizedTableColumn fx:id="colEndDate" text="%treetablecolumn.entfallserie"/>
+
+                <SummarizedTableColumn fx:id="colAssemblyIndicator" text="%treetablecolumn.assemblyindicator"/>
+                <SummarizedTableColumn fx:id="colConstructionsState" text="%treetablecolumn.constructionsState"/>
+                <SummarizedTableColumn fx:id="colQuality" text="%treetablecolumn.quality"/>
+                <SummarizedTableColumn fx:id="colMatThickness" text="%treetablecolumn.materialThickness"/>
+                <SummarizedTableColumn fx:id="colSeeDrawing" text="%treetablecolumn.seedrawing"/>
+
+                <SummarizedTableColumn fx:id="colRespConstr1" text="%treetablecolumn.respConstr1"/>
+                <SummarizedTableColumn fx:id="colRespConstr2" text="%treetablecolumn.respConstr2"/>
+
+                <SummarizedTableColumn fx:id="colBuildSampleApproval" text="%treetablecolumn.buildsampleapproval"/>
+                <SummarizedTableColumn fx:id="colBuildSampleApprovalDate"
+                                       text="%treetablecolumn.buildsampleapprovalDate"/>
+
+                <SummarizedTableColumn fx:id="colTechnicallyOkay" text="%treetablecolumn.technicallyOk"/>
+                <SummarizedTableColumn fx:id="colRelDateSoll" text="%treetablecolumn.relDateSoll"/>
+
+                <SummarizedTableColumn fx:id="colDesignerName" text="%treetablecolumn.designerName"/>
+                <SummarizedTableColumn fx:id="colDesignerCostGroup" text="%treetablecolumn.designerCostGroup"/>
+                <SummarizedTableColumn fx:id="colDesignerPhone" text="%treetablecolumn.designerPhoneNum"/>
+
+                <SummarizedTableColumn fx:id="colKStandRelDate" text="%treetablecolumn.kStandRelDate"/>
+                <SummarizedTableColumn fx:id="colTioFreiRelDate" text="%treetablecolumn.tioFreiRelDate"/>
+
+                <SummarizedTableColumn fx:id="colMFPStatus" text="%treetablecolumn.MFPStatus"/>
+                <SummarizedTableColumn fx:id="colMFPThickness" text="%treetablecolumn.MFPThickness"/>
+
+                <SummarizedTableColumn fx:id="colKseKz" text="%treetablecolumn.kseKz"/>
+                <SummarizedTableColumn fx:id="colWeightAcceptedFromEpis"
+                                       text="%treetablecolumn.weightAcceptedFromEpis"/>
+
+                <SummarizedTableColumn fx:id="colBaukastenFlag" text="%treetablecolumn.baukastenFlag"/>
+                <SummarizedTableColumn fx:id="colBaukastenStatus" text="%treetablecolumn.baukastenStatus"/>
+                <SummarizedTableColumn fx:id="colBaukastenNodeId" text="%treetablecolumn.baukastenNodeId"/>
+
+                <SummarizedTableColumn fx:id="colProcessStatus" text="%treetablecolumn.processStatus"/>
+                <SummarizedTableColumn fx:id="colDmuRelevant" text="%treetablecolumn.dmuRelevant"/>
+                <SummarizedTableColumn fx:id="colMaterialType" text="%treetablecolumn.materialtType"/>
+
+                <SummarizedTableColumn fx:id="colEarliestPvs" text="%treetablecolumn.earliestPvs"/>
+                <SummarizedTableColumn fx:id="colEarliestNs" text="%treetablecolumn.earliestNs"/>
+                <SummarizedTableColumn fx:id="colEarliestSop" text="%treetablecolumn.earliestSop"/>
+
+                <SummarizedTableColumn fx:id="colPActivationDate" text="%treetablecolumn.pActivationDate"/>
+                <SummarizedTableColumn fx:id="colKonstructureDate" text="%treetablecolumn.konstructureDate"/>
+                <SummarizedTableColumn fx:id="colAvonStatus" text="%treetablecolumn.avonStatus"/>
+
+                <SummarizedTableColumn fx:id="colWahlweiseFall" text="%treetablecolumn.wahlweiseFall"/>
+                <SummarizedTableColumn fx:id="colWahlweiseNr" text="%treetablecolumn.wahlweiseNr"/>
+                <SummarizedTableColumn fx:id="colPrNumberRule" text="%treetablecolumn.prnummern"/>
+                <SummarizedTableColumn fx:id="colTisSort" text="%treetablecolumn.sortierung"/>
+            </columns>
+        </CustomTableView>
+
+    </center>
+</BorderPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            styleClass="pane-status-bar" fx:controller="de.vw.paso.client.main.statusbar.MainStatusBarController">
+    <center>
+        <HBox alignment="CENTER" spacing="4">
+            <Label fx:id="labelStatusText" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308"
+                   maxWidth="1.7976931348623157E308"/>
+            <ProgressBar fx:id="progressBar" minWidth="150.0" progress="0.0" visible="false"/>
+        </HBox>
+
+    </center>
+    <right>
+        <Label fx:id="labelConfidential" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"/>
+    </right>
+    <left>
+        <Label fx:id="buildInfoLabel"/>
+    </left>
+    <padding>
+        <Insets bottom="2.0" left="4.0" right="4.0" top="2.0"/>
+    </padding>
+</BorderPane>
